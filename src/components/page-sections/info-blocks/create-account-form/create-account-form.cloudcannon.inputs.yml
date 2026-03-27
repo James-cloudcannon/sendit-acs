@@ -1,0 +1,49 @@
+heading:
+  type: text
+  comment: Main heading text for the signup form.
+
+form_action:
+  type: text
+  comment: Form action URL for submission.
+
+submit_text:
+  type: text
+  comment: Text displayed on the submit button.
+
+buttonSections:
+  type: array
+  comment: Social sign-in buttons displayed below the form.
+  options:
+    structures: _structures.buttonSections
+
+footer_text:
+  type: markdown
+  comment: Footer text with link (e.g. login link). Supports inline markdown.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

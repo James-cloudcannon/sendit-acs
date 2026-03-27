@@ -1,0 +1,142 @@
+label: Pricing List
+icon: payments
+description: Pricing cards with plan details, feature lists, and CTA buttons.
+value:
+  _component: page-sections/info-blocks/pricing-list
+  plans:
+    - name: Free
+      description: Everything you need to get started.
+      price: $0
+      featured: false
+      features:
+        - text: 1 Email Campaign
+          iconName: check
+        - text: 1 Year Premium Support
+          iconName: check
+        - text: Regular Update for 1 Year
+          iconName: check
+      buttonSections:
+        - _component: building-blocks/core-elements/button
+          text: Try This Free
+          hideText: false
+          link: ""
+          iconName: ""
+          iconPosition: before
+          variant: primary
+          size: md
+    - name: Pro
+      description: More collaborative power and unlimited boards for fast-growing.
+      price: $125
+      featured: true
+      features:
+        - text: 1 Email Campaign
+          iconName: check
+        - text: 1 Year Premium Support
+          iconName: check
+        - text: Regular Update for 1 Year
+          iconName: check
+      buttonSections:
+        - _component: building-blocks/core-elements/button
+          text: Try This Free
+          hideText: false
+          link: ""
+          iconName: ""
+          iconPosition: before
+          variant: primary
+          size: md
+    - name: Business
+      description: For starters includes unlimited members.
+      price: $350
+      featured: false
+      features:
+        - text: 1 Email Campaign
+          iconName: check
+        - text: 1 Year Premium Support
+          iconName: check
+        - text: Regular Update for 1 Year
+          iconName: check
+      buttonSections:
+        - _component: building-blocks/core-elements/button
+          text: Try This Free
+          hideText: false
+          link: ""
+          iconName: ""
+          iconPosition: before
+          variant: primary
+          size: md
+  colorScheme: inherit
+  backgroundColor: accent
+preview:
+  text:
+    - Pricing List
+  subtext:
+    - key: plans[0].name
+  icon: payments
+picker_preview:
+  text: Pricing List
+  subtext: Pricing cards with plan details, feature lists, and CTA buttons.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/pricing-list/pricing-list.cloudcannon.inputs.yml
+_structures:
+  plan:
+    values:
+      - label: Plan
+        value:
+          name: ""
+          description: ""
+          price: ""
+          featured: false
+          features: []
+          buttonSections:
+            - _component: building-blocks/core-elements/button
+              text: Try This Free
+              hideText: false
+              link: ""
+              iconName: ""
+              iconPosition: before
+              variant: primary
+              size: md
+        preview:
+          text:
+            - key: name
+          subtext:
+            - key: price
+        _inputs:
+          name:
+            type: text
+            comment: Plan name (e.g., Free, Pro, Business).
+          description:
+            type: text
+            comment: Short description of the plan.
+          price:
+            type: text
+            comment: Price display text (e.g., $125).
+          featured:
+            type: switch
+            comment: Highlight this plan with a colored top border.
+          features:
+            type: array
+            comment: List of features included in this plan.
+            options:
+              structures: _structures.featureItem
+          buttonSections:
+            type: array
+            comment: CTA button for this plan.
+            options:
+              structures: _structures.buttonSections
+  featureItem:
+    values:
+      - label: Feature
+        value:
+          text: ""
+          iconName: check
+        preview:
+          text:
+            - key: text
+        _inputs:
+          text:
+            type: text
+            comment: Feature description text.
+          iconName:
+            type: text
+            comment: Icon name for the feature (default is check).

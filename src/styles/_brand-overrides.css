@@ -1,0 +1,27 @@
+@layer components {
+  .button .button-inner {
+    border-radius: var(--radius-lg);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .button .button-inner.variant-primary {
+    padding-block: var(--spacing-em-md);
+    padding-inline: var(--spacing-em-lg);
+  }
+
+  .button .button-inner.variant-text {
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .card .card-inner {
+    border-radius: var(--radius-lg);
+  }
+
+  .heading em,
+  .heading i {
+    color: var(--color-brand);
+    font-style: normal;
+  }
+}

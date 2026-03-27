@@ -1,0 +1,47 @@
+label: FAQ Section
+icon: help_outline
+description: FAQ section with expandable question and answer accordion items.
+value:
+  _component: page-sections/features/feature-faq
+  heading: "Have *Questions?*"
+  description: ""
+  faq_items:
+    - title: "Question goes here?"
+      answer: "Answer text goes here."
+  open_first: true
+  colorScheme: inherit
+  backgroundColor: accent
+preview:
+  text:
+    - FAQ Section
+  subtext:
+    - key: heading
+  icon: help_outline
+picker_preview:
+  text: FAQ Section
+  subtext: FAQ section with expandable question and answer accordion items.
+_inputs_from_glob:
+  - /src/components/page-sections/features/feature-faq/feature-faq.cloudcannon.inputs.yml
+_structures:
+  faqItem:
+    values:
+      - label: FAQ Item
+        value:
+          title: ""
+          answer: ""
+        preview:
+          text:
+            - key: title
+          subtext:
+            - key: answer
+        _inputs:
+          title:
+            type: text
+            comment: The question text.
+          answer:
+            type: markdown
+            comment: The answer text.
+            options:
+              bold: true
+              italic: true
+              link: true

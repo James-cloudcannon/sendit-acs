@@ -1,0 +1,1357 @@
+{
+  "site_name": "sendit",
+  "source_dir": "apps/backend/outputs/sendit",
+  "template_dir": "data/templates/sendit",
+  "migration_dir": "data/templates/sendit/.migration",
+  "strategy": {
+    "scale": "small",
+    "pre_grouped": true
+  },
+  "colors": {
+    "extracted": true,
+    "palette": {
+      "primary": "#e71818",
+      "accent": "#e71818",
+      "text": "#374151",
+      "text_strong": "#000000",
+      "text_light": "#ffffff",
+      "link": "#e71818",
+      "background": "#ffffff",
+      "background_dark": "#000000",
+      "background_accent": "#fde8e8"
+    }
+  },
+  "components": {
+    "component-1774565890234-659": {
+      "id": "component-1774565890234-659",
+      "name": "Beautiful web campaigns",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(1)",
+      "screenshot": "index/screenshots/component-1774565890234-659.png",
+      "json_file": "index/component-1774565890234-659.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Light pink background, left side has bold h1, paragraph, red filled CTA button. Right side has a dashboard/report UI screenshot with rounded shadow.",
+      "html_summary": "",
+      "group": "hero-split-large",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565891997-694": {
+      "id": "component-1774565891997-694",
+      "name": "Scale your Business",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(2)",
+      "screenshot": "index/screenshots/component-1774565891997-694.png",
+      "json_file": "index/component-1774565891997-694.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": {
+          "count": 4,
+          "item_elements": [
+            {
+              "type": "counter"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 4,
+          "item_style": "floating"
+        },
+        "interactive": null
+      },
+      "visual_notes": "Centered heading with 'Business' in red, descriptive paragraph, then 4 stat counters in a row ($0m, 0, 0+, 0+) with labels below each. White background.",
+      "html_summary": "",
+      "group": "feature-stats",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565893096-938": {
+      "id": "component-1774565893096-938",
+      "name": "Video Player",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(3)",
+      "screenshot": "index/screenshots/component-1774565893096-938.png",
+      "json_file": "index/component-1774565893096-938.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "video"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Centered photo with pink/warm overlay of people at a table, red circular play button centered over image. Rounded corners, light pink background.",
+      "html_summary": "",
+      "group": "feature-video-modal",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565894223-470": {
+      "id": "component-1774565894223-470",
+      "name": "Sendit Features",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(4)",
+      "screenshot": "index/screenshots/component-1774565894223-470.png",
+      "json_file": "index/component-1774565894223-470.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Simple centered section with bold heading ('Sendit' black, 'Features' red) and gray descriptive paragraph below. White background, acts as a section header.",
+      "html_summary": "",
+      "group": "cta-centre",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565895126-119": {
+      "id": "component-1774565895126-119",
+      "name": "Email Campaign in one minute",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(5)",
+      "screenshot": "index/screenshots/component-1774565895126-119.png",
+      "json_file": "index/component-1774565895126-119.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left side: bold heading, body text, red 'Try This Free' text link with arrow. Right side: messaging UI mockup showing contacts list with 'New' button. Red vertical accent bar on left edge. White background.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565896294-340": {
+      "id": "component-1774565896294-340",
+      "name": "See every Lead in one Place",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(6)",
+      "screenshot": "index/screenshots/component-1774565896294-340.png",
+      "json_file": "index/component-1774565896294-340.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "image",
+          "right": "content"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left side: analytics chart mockup with bar chart (red/gold bars), visitor stats. Right side: bold heading, body text, red 'Try This Free' text link with arrow. Image has shadow and rounded corners.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565897322-80": {
+      "id": "component-1774565897322-80",
+      "name": "100% free uploads",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(7)",
+      "screenshot": "index/screenshots/component-1774565897322-80.png",
+      "json_file": "index/component-1774565897322-80.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left side: bold heading, body text, red 'Try This Free' text link. Right side: file upload modal UI mockup with drag-drop area and red Upload button. White background.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565898723-685": {
+      "id": "component-1774565898723-685",
+      "name": "Build relationships that last",
+      "page": "index",
+      "selector": "#main-content > editable-array-item:nth-of-type(8)",
+      "screenshot": "index/screenshots/component-1774565898723-685.png",
+      "json_file": "index/component-1774565898723-685.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "dark"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": {
+          "count": 3,
+          "item_elements": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 3,
+          "item_style": "card"
+        },
+        "interactive": null
+      },
+      "visual_notes": "Black background, white heading with 'last' in italics/red. 3 white testimonial cards in a row, each with circular avatar photo, name, title, and quote text.",
+      "html_summary": "",
+      "group": "feature-testimonial-card-grid",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565907682-571": {
+      "id": "component-1774565907682-571",
+      "name": "Run the best campaigns",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(1)",
+      "screenshot": "features/screenshots/component-1774565907682-571.png",
+      "json_file": "features/component-1774565907682-571.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Light pink background, left side bold h1, paragraph, red filled CTA. Right side: dashboard mockup with donut chart, bar chart, and notification badge. Same pattern as index hero.",
+      "html_summary": "",
+      "group": "hero-split-large",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565908544-543": {
+      "id": "component-1774565908544-543",
+      "name": "Sendit Features",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(2)",
+      "screenshot": "features/screenshots/component-1774565908544-543.png",
+      "json_file": "features/component-1774565908544-543.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Centered heading ('Sendit' black, 'Features' red) with gray descriptive text below. White background. Identical pattern to index cta-centre.",
+      "html_summary": "",
+      "group": "cta-centre",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565909520-771": {
+      "id": "component-1774565909520-771",
+      "name": "Simply click and send",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(3)",
+      "screenshot": "features/screenshots/component-1774565909520-771.png",
+      "json_file": "features/component-1774565909520-771.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left: bold heading, body text, red 'Try This Free' link. Right: messaging UI mockup. Red vertical accent bar on left edge. Same pattern as index email campaign section.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565910518-78": {
+      "id": "component-1774565910518-78",
+      "name": "See every lead in one place",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(4)",
+      "screenshot": "features/screenshots/component-1774565910518-78.png",
+      "json_file": "features/component-1774565910518-78.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "image",
+          "right": "content"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left: analytics bar chart mockup. Right: bold heading, body text, red 'Try This Free' link. Same pattern as index lead tracking section.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565911359-77": {
+      "id": "component-1774565911359-77",
+      "name": "Free templates to get you s...",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(5)",
+      "screenshot": "features/screenshots/component-1774565911359-77.png",
+      "json_file": "features/component-1774565911359-77.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left: bold heading, body text, red 'Try This Free' link. Right: file upload modal mockup. Same pattern as index free uploads section.",
+      "html_summary": "",
+      "group": "split-image-text",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565912293-314": {
+      "id": "component-1774565912293-314",
+      "name": "Build relationships that last",
+      "page": "features",
+      "selector": "#main-content > editable-array-item:nth-of-type(6)",
+      "screenshot": "features/screenshots/component-1774565912293-314.png",
+      "json_file": "features/component-1774565912293-314.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "dark"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": {
+          "count": 3,
+          "item_elements": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 3,
+          "item_style": "card"
+        },
+        "interactive": null
+      },
+      "visual_notes": "Black background, identical to index testimonial section. 3 white cards with avatar, name, title, quote.",
+      "html_summary": "",
+      "group": "feature-testimonial-card-grid",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565920012-999": {
+      "id": "component-1774565920012-999",
+      "name": "Let's talk.",
+      "page": "contact",
+      "selector": "#main-content > editable-array-item:nth-of-type(1)",
+      "screenshot": "contact/screenshots/component-1774565920012-999.png",
+      "json_file": "contact/component-1774565920012-999.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Light pink background, centered bold h1 'Let's talk.', gray subtitle text below. Simple banner/header section.",
+      "html_summary": "",
+      "group": "hero-banner",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565920888-252": {
+      "id": "component-1774565920888-252",
+      "name": "Contact Details",
+      "page": "contact",
+      "selector": "#main-content > editable-array-item:nth-of-type(2)",
+      "screenshot": "contact/screenshots/component-1774565920888-252.png",
+      "json_file": "contact/component-1774565920888-252.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "form"
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "40/60",
+          "left": "content",
+          "right": "form"
+        },
+        "grid": null,
+        "interactive": "form"
+      },
+      "visual_notes": "Left: Contact details with address, phone, email each with icon and label. Right: white card with 'Say Hello' heading, form fields (name, phone, email, message textarea), red 'Send message' button. Light gray/pink background.",
+      "html_summary": "",
+      "group": "contact-form",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565928406-94": {
+      "id": "component-1774565928406-94",
+      "name": "On a mission to change emai...",
+      "page": "about",
+      "selector": "#main-content > editable-array-item:nth-of-type(1)",
+      "screenshot": "about/screenshots/component-1774565928406-94.png",
+      "json_file": "about/component-1774565928406-94.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "40/60",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Light beige/cream background. Left: large bold h1, body text, red filled CTA. Right: collage of 3 team photos at different sizes and angles with slight rotation/overlap effect.",
+      "html_summary": "",
+      "group": "hero-split-large",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565929531-504": {
+      "id": "component-1774565929531-504",
+      "name": "Built for your Business",
+      "page": "about",
+      "selector": "#main-content > editable-array-item:nth-of-type(2)",
+      "screenshot": "about/screenshots/component-1774565929531-504.png",
+      "json_file": "about/component-1774565929531-504.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": {
+          "count": 4,
+          "item_elements": [
+            {
+              "type": "counter"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 4,
+          "item_style": "floating"
+        },
+        "interactive": null
+      },
+      "visual_notes": "Identical to index stats section. Centered heading ('Built for your' black, 'Business' red), body text, 4 stat counters in a row. White background.",
+      "html_summary": "",
+      "group": "feature-stats",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565930450-943": {
+      "id": "component-1774565930450-943",
+      "name": "Video Player",
+      "page": "about",
+      "selector": "#main-content > editable-array-item:nth-of-type(3)",
+      "screenshot": "about/screenshots/component-1774565930450-943.png",
+      "json_file": "about/component-1774565930450-943.json",
+      "skeleton": {
+        "layout": "split",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          },
+          {
+            "type": "button",
+            "count": 1
+          },
+          {
+            "type": "video"
+          }
+        ],
+        "repeating": null,
+        "split": {
+          "ratio": "50/50",
+          "left": "content",
+          "right": "image"
+        },
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Left: bold heading, body text, red outline 'Follow on LinkedIn' button. Right: photo of team working with orange/red play button overlay. White background.",
+      "html_summary": "",
+      "group": "split-text-video-modal",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565931380-386": {
+      "id": "component-1774565931380-386",
+      "name": "Our leadership team",
+      "page": "about",
+      "selector": "#main-content > editable-array-item:nth-of-type(4)",
+      "screenshot": "about/screenshots/component-1774565931380-386.png",
+      "json_file": "about/component-1774565931380-386.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          }
+        ],
+        "repeating": {
+          "count": 8,
+          "item_elements": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 4,
+          "item_style": "floating"
+        },
+        "interactive": null
+      },
+      "visual_notes": "Centered heading, then 4x2 grid of team member photos (square, rounded corners) with name and title below each. 8 members total. White background.",
+      "html_summary": "",
+      "group": "team-grid",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565941238-255": {
+      "id": "component-1774565941238-255",
+      "name": "Oops! Page not found.",
+      "page": "404",
+      "selector": "div.flex-1:nth-of-type(1) > section.grid.place-items-center.pt-30",
+      "screenshot": "404/screenshots/component-1774565941238-255.png",
+      "json_file": "404/component-1774565941238-255.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "button",
+            "count": 1
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Centered illustration of a hand holding magnifying glass over '404' text in purple. Bold heading below, red filled 'Try again' button at bottom. White background.",
+      "html_summary": "",
+      "group": "404-page",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565950175-896": {
+      "id": "component-1774565950175-896",
+      "name": "Log In",
+      "page": "login",
+      "selector": "#main-content > editable-array-item",
+      "screenshot": "login/screenshots/component-1774565950175-896.png",
+      "json_file": "login/component-1774565950175-896.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "form"
+          },
+          {
+            "type": "button",
+            "count": 1
+          },
+          {
+            "type": "divider"
+          },
+          {
+            "type": "button-group",
+            "count": 2
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": "form"
+      },
+      "visual_notes": "White card centered on page with subtle shadow. Bold 'Log In' heading, name/email fields, Remember Me checkbox + Forgot Password link, large red login button, 'or' divider, Google and Facebook sign-in buttons (outline), 'Create an Account' link at bottom.",
+      "html_summary": "",
+      "group": "login-form",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565955831-893": {
+      "id": "component-1774565955831-893",
+      "name": "A plan for everyone",
+      "page": "pricing",
+      "selector": "#main-content > editable-array-item:nth-of-type(1)",
+      "screenshot": "pricing/screenshots/component-1774565955831-893.png",
+      "json_file": "pricing/component-1774565955831-893.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": null
+      },
+      "visual_notes": "Light pink background, centered bold h1 'A plan for everyone', gray subtitle text. Bottom edge shows top of pricing cards peeking in. Banner/header section.",
+      "html_summary": "",
+      "group": "hero-banner",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565957530-206": {
+      "id": "component-1774565957530-206",
+      "name": "editable-array-item",
+      "page": "pricing",
+      "selector": "#main-content > editable-array-item:nth-of-type(2)",
+      "screenshot": "pricing/screenshots/component-1774565957530-206.png",
+      "json_file": "pricing/component-1774565957530-206.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [],
+        "repeating": {
+          "count": 3,
+          "item_elements": [
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            },
+            {
+              "type": "counter"
+            },
+            {
+              "type": "text"
+            },
+            {
+              "type": "button",
+              "count": 1
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 3,
+          "item_style": "card"
+        },
+        "interactive": null
+      },
+      "visual_notes": "3 pricing cards side by side (Free, Pro, Business). Each has plan name, description, price with strikethrough for discounted, feature list, and red 'Try This Free' button. Pro card highlighted with red top border. Light pink background.",
+      "html_summary": "",
+      "group": "pricing-list",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565959805-740": {
+      "id": "component-1774565959805-740",
+      "name": "Have Questions?",
+      "page": "pricing",
+      "selector": "#main-content > editable-array-item:nth-of-type(3)",
+      "screenshot": "pricing/screenshots/component-1774565959805-740.png",
+      "json_file": "pricing/component-1774565959805-740.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h2"
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": {
+          "count": 5,
+          "item_elements": [
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": null,
+        "interactive": "accordion"
+      },
+      "visual_notes": "Light pink background. Centered heading ('Have' black, 'Questions?' red), descriptive text. Below: 5 FAQ accordion items, each with red numbered circle, question text, and chevron. First item expanded showing answer. White card style for each item.",
+      "html_summary": "",
+      "group": "feature-faq",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565966398-585": {
+      "id": "component-1774565966398-585",
+      "name": "Create Account",
+      "page": "signup",
+      "selector": "#main-content > editable-array-item",
+      "screenshot": "signup/screenshots/component-1774565966398-585.png",
+      "json_file": "signup/component-1774565966398-585.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [
+          {
+            "type": "heading",
+            "level": "h1"
+          },
+          {
+            "type": "form"
+          },
+          {
+            "type": "button",
+            "count": 1
+          },
+          {
+            "type": "divider"
+          },
+          {
+            "type": "button-group",
+            "count": 2
+          },
+          {
+            "type": "text"
+          }
+        ],
+        "repeating": null,
+        "split": null,
+        "grid": null,
+        "interactive": "form"
+      },
+      "visual_notes": "White card centered on page. Bold 'Create Account' heading, name/email/password/retype-password fields (password fields have eye toggle), terms checkbox, red 'Create an Account' button, 'or' divider, Google and Facebook sign-in buttons, 'Log In' link at bottom.",
+      "html_summary": "",
+      "group": "create-account-form",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    },
+    "component-1774565976793-874": {
+      "id": "component-1774565976793-874",
+      "name": "Blog Showcase: The Ultimate...",
+      "page": "blog",
+      "selector": "div.flex-1:nth-of-type(1) > section.py-16:nth-of-type(2)",
+      "screenshot": "blog/screenshots/component-1774565976793-874.png",
+      "json_file": "blog/component-1774565976793-874.json",
+      "skeleton": {
+        "layout": "full-width-centered",
+        "background": {
+          "type": "solid",
+          "darkness": "light"
+        },
+        "elements": [],
+        "repeating": {
+          "count": 3,
+          "item_elements": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "text"
+            },
+            {
+              "type": "heading",
+              "level": "h3"
+            },
+            {
+              "type": "text"
+            }
+          ]
+        },
+        "split": null,
+        "grid": {
+          "columns": 3,
+          "item_style": "card"
+        },
+        "interactive": "linked-cards"
+      },
+      "visual_notes": "3 blog post cards in a row. Each has a large photo with dark overlay, red 'Marketing' / 'Blog' category tag, bold title, and date below. Cards have rounded corners. White background.",
+      "html_summary": "",
+      "group": "blog-layout",
+      "status": "skeleton_extracted",
+      "skip_reason": null
+    }
+  },
+  "groups": {
+    "hero-split-large": {
+      "name": "hero-split-large",
+      "category": "heroes",
+      "description": "Full-width hero section with split layout: text content on the left, large image on the right. Light pink/accent background.",
+      "source_components": [
+        "component-1774565928406-94",
+        "component-1774565907682-571",
+        "component-1774565890234-659"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/hero-split-large.md",
+      "built": true
+    },
+    "split-image-text": {
+      "name": "split-image-text",
+      "category": "features",
+      "description": "Two-column split section with text content on one side and a UI mockup image on the other. Alternates left/right positioning.",
+      "source_components": [
+        "component-1774565896294-340",
+        "component-1774565895126-119",
+        "component-1774565897322-80",
+        "component-1774565911359-77",
+        "component-1774565910518-78",
+        "component-1774565909520-771"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/split-image-text.md",
+      "built": true
+    },
+    "feature-stats": {
+      "name": "feature-stats",
+      "category": "features",
+      "description": "Centered section with heading, paragraph, and a row of 4 animated stat counters with labels.",
+      "source_components": [
+        "component-1774565891997-694",
+        "component-1774565929531-504"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/feature-stats.md",
+      "built": true
+    },
+    "feature-testimonial-card-grid": {
+      "name": "feature-testimonial-card-grid",
+      "category": "features",
+      "description": "Testimonial section with dark background, centered heading, and 3-column grid of white testimonial cards with avatars.",
+      "source_components": [
+        "component-1774565898723-685",
+        "component-1774565912293-314"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/feature-testimonial-card-grid.md",
+      "built": true
+    },
+    "cta-centre": {
+      "name": "cta-centre",
+      "category": "ctas",
+      "description": "Simple centered section header with large bold heading and descriptive paragraph.",
+      "source_components": [
+        "component-1774565894223-470",
+        "component-1774565908544-543"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/cta-centre.md",
+      "built": true
+    },
+    "feature-video-modal": {
+      "name": "feature-video-modal",
+      "category": "features",
+      "description": "Centered video thumbnail with play button overlay on light pink background.",
+      "source_components": [
+        "component-1774565893096-938"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/feature-video-modal.md",
+      "built": true
+    },
+    "contact-form": {
+      "name": "contact-form",
+      "category": "info-blocks",
+      "description": "Contact section with split layout: contact details on the left, form card on the right.",
+      "source_components": [
+        "component-1774565920888-252"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/contact-form.md",
+      "built": true
+    },
+    "login-form": {
+      "name": "login-form",
+      "category": "info-blocks",
+      "description": "Centered login form card with fields, social sign-in buttons, and account link.",
+      "source_components": [
+        "component-1774565950175-896"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/login-form.md",
+      "built": true
+    },
+    "create-account-form": {
+      "name": "create-account-form",
+      "category": "info-blocks",
+      "description": "Centered signup form card with fields, terms checkbox, social sign-in, and login link.",
+      "source_components": [
+        "component-1774565966398-585"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/create-account-form.md",
+      "built": true
+    },
+    "team-grid": {
+      "name": "team-grid",
+      "category": "people",
+      "description": "Team member grid with centered heading and 4-column grid of photos with names and titles.",
+      "source_components": [
+        "component-1774565931380-386"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/team-grid.md",
+      "built": true
+    },
+    "split-text-video-modal": {
+      "name": "split-text-video-modal",
+      "category": "features",
+      "description": "Split layout with text content on the left and video thumbnail with play button on the right.",
+      "source_components": [
+        "component-1774565930450-943"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/split-text-video-modal.md",
+      "built": true
+    },
+    "hero-banner": {
+      "name": "hero-banner",
+      "category": "heroes",
+      "description": "Simple centered banner with large heading and subtitle on light pink background.",
+      "source_components": [
+        "component-1774565920012-999",
+        "component-1774565955831-893"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/hero-banner.md",
+      "built": true
+    },
+    "pricing-list": {
+      "name": "pricing-list",
+      "category": "info-blocks",
+      "description": "Three pricing cards with plan details, feature lists, and CTA buttons.",
+      "source_components": [
+        "component-1774565957530-206"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/pricing-list.md",
+      "built": true
+    },
+    "feature-faq": {
+      "name": "feature-faq",
+      "category": "features",
+      "description": "FAQ section with centered heading and expandable accordion items on pink background.",
+      "source_components": [
+        "component-1774565959805-740"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/feature-faq.md",
+      "built": true
+    },
+    "404-page": {
+      "name": "404-page",
+      "category": "info-blocks",
+      "description": "404 error page with centered illustration, heading, and retry button.",
+      "source_components": [
+        "component-1774565941238-255"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/404-page.md",
+      "built": true
+    },
+    "blog-layout": {
+      "name": "blog-layout",
+      "category": "info-blocks",
+      "description": "Blog post card grid with images, category tags, titles, and dates.",
+      "source_components": [
+        "component-1774565976793-874"
+      ],
+      "design_spec": "done",
+      "design_spec_path": "design-specs/blog-layout.md",
+      "built": true
+    }
+  },
+  "tracking": {
+    "total_components": 27,
+    "assigned": 27,
+    "skipped": 0,
+    "unassigned": 0,
+    "total_groups": 16,
+    "groups_designed": 16,
+    "groups_built": 16,
+    "skeletons_extracted": 27
+  },
+  "status": "phase_7_complete"
+}

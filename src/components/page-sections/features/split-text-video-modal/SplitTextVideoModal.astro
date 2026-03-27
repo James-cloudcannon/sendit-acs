@@ -1,0 +1,218 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Split from "@wrappers/split/Split.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+import Image from "@core-elements/image/Image.astro";
+
+const {
+  heading = "We love what we do",
+  description = "",
+  buttonSections = [],
+  video_type = "vimeo",
+  video_id = "",
+  video_title = "",
+  thumbnail = {},
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const modalId = `split-video-modal-${video_id || 'default'}`;
+const embedUrl = video_type === "youtube"
+  ? `https://www.youtube.com/embed/${video_id}?autoplay=1`
+  : `https://player.vimeo.com/video/${video_id}?autoplay=1&dnt=1`;
+---
+
+<CustomSection
+  class:list={["split-text-video-modal", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Split
+    distributionMode="half"
+    verticalAlignment="center"
+    gap="2xl"
+  >
+    <Fragment slot="first">
+      <Heading level="h2" size="xl" text={heading} data-prop="heading" />
+      <SimpleText size="md" text={description} data-prop="description" />
+      <ButtonGroup
+        alignX="start"
+        buttonSections={buttonSections}
+        data-children-prop="buttonSections"
+      />
+    </Fragment>
+    <Fragment slot="second">
+      <div class="split-text-video-modal__trigger" data-modal-target={modalId}>
+        <Image
+          source={thumbnail.source}
+          alt={thumbnail.alt || video_title}
+          rounded={true}
+          data-prop-src="thumbnail.source"
+          data-prop-alt="thumbnail.alt"
+        />
+        <button class="split-text-video-modal__play-btn" type="button" aria-label="Play video">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+      </div>
+    </Fragment>
+  </Split>
+
+  <dialog class="split-text-video-modal__dialog" id={modalId}>
+    <div class="split-text-video-modal__dialog-inner">
+      <button
+        class="split-text-video-modal__close"
+        type="button"
+        aria-label="Close"
+        onclick={`document.getElementById('${modalId}').close()`}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="split-text-video-modal__video-container">
+        <iframe
+          data-src={embedUrl}
+          allow="fullscreen; picture-in-picture; autoplay"
+          allowfullscreen
+          title={video_title}
+        ></iframe>
+      </div>
+    </div>
+  </dialog>
+</CustomSection>
+
+<script>
+  document.querySelectorAll('[data-modal-target]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const modalId = trigger.getAttribute('data-modal-target');
+      const dialog = document.getElementById(modalId);
+      if (dialog) {
+        dialog.showModal();
+        const iframe = dialog.querySelector('iframe[data-src]');
+        if (iframe && !iframe.src) {
+          iframe.src = iframe.getAttribute('data-src');
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.split-text-video-modal__dialog').forEach(dialog => {
+    dialog.addEventListener('close', () => {
+      const iframe = dialog.querySelector('iframe');
+      if (iframe) iframe.src = '';
+    });
+  });
+</script>
+
+<style is:global>
+  @layer page-sections {
+    .split-text-video-modal__trigger {
+      position: relative;
+      cursor: pointer;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .split-text-video-modal__trigger .image {
+      margin-top: 0;
+    }
+
+    .split-text-video-modal__play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brand);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .split-text-video-modal__play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .split-text-video-modal__dialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 960px;
+      width: 90vw;
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: var(--radius-lg);
+      background: #000;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .split-text-video-modal__dialog[open] {
+      display: block;
+    }
+
+    .split-text-video-modal__dialog::backdrop {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .split-text-video-modal__dialog-inner {
+      position: relative;
+    }
+
+    .split-text-video-modal__close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .split-text-video-modal__video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+    }
+
+    .split-text-video-modal__video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+</style>

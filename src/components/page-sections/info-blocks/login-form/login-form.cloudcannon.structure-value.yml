@@ -1,0 +1,94 @@
+label: Login Form
+icon: login
+description: Centered login card with form fields, social sign-in, and create account link.
+value:
+  _component: page-sections/info-blocks/login-form
+  heading: "Log In"
+  form_action: ""
+  fields:
+    - label: "Full Name"
+      name: "name"
+      type: "text"
+      placeholder: "Your Name"
+      required: false
+    - label: "Email Address"
+      name: "email"
+      type: "email"
+      placeholder: "Your Email"
+      required: false
+  submit_text: "Log In"
+  social_buttons:
+    - _component: building-blocks/core-elements/button
+      text: "Sign In with Google"
+      hideText: false
+      link: ""
+      iconName: "social/google"
+      iconPosition: before
+      variant: tertiary
+      size: md
+    - _component: building-blocks/core-elements/button
+      text: "Sign In with Facebook"
+      hideText: false
+      link: ""
+      iconName: "social/facebook"
+      iconPosition: before
+      variant: tertiary
+      size: md
+  footer_text: "Create an Account"
+  footer_link: "/signup/"
+  colorScheme: inherit
+  backgroundColor:
+preview:
+  text:
+    - Login Form
+  subtext:
+    - key: heading
+  icon: login
+picker_preview:
+  text: Login Form
+  subtext: Centered login card with form fields, social sign-in, and create account link.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/login-form/login-form.cloudcannon.inputs.yml
+_structures:
+  loginField:
+    values:
+      - label: Field
+        value:
+          label: ""
+          name: ""
+          type: "text"
+          placeholder: ""
+          required: false
+        preview:
+          text:
+            - key: label
+          subtext:
+            - key: name
+        _inputs:
+          label:
+            type: text
+            comment: Label shown above the input.
+          name:
+            type: text
+            comment: HTML name attribute for form submission.
+          type:
+            type: select
+            comment: Input type.
+            options:
+              values:
+                - id: text
+                  name: Text
+                - id: email
+                  name: Email
+                - id: tel
+                  name: Telephone
+                - id: password
+                  name: Password
+                - id: number
+                  name: Number
+          placeholder:
+            type: text
+            comment: Placeholder text inside the input.
+          required:
+            type: switch
+            comment: Whether this field is required.

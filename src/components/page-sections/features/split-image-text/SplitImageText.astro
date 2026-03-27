@@ -1,0 +1,71 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Split from "@wrappers/split/Split.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+import Image from "@core-elements/image/Image.astro";
+
+const {
+  heading = "",
+  description = "",
+  buttonSections = [],
+  image = {},
+  image_alt = "",
+  reversed = false,
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["split-image-text", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Split
+    distributionMode="half"
+    verticalAlignment="center"
+    reverse={reversed}
+    gap="xl"
+  >
+    <Fragment slot="first">
+      <Heading level="h2" size="2xl" data-prop="heading">{heading}</Heading>
+      <SimpleText size="md" data-prop="description" text={description} />
+      <ButtonGroup
+        alignX="start"
+        buttonSections={buttonSections}
+        data-children-prop="buttonSections"
+      />
+    </Fragment>
+    <Fragment slot="second">
+      <Image
+        source={image.source}
+        alt={image_alt}
+        rounded={true}
+        data-prop-src="image.source"
+        data-prop-alt="image_alt"
+      />
+    </Fragment>
+  </Split>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .split-image-text {
+      .image .image-inner {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,45 @@
+heading:
+  type: text
+  comment: Section heading text. Use *asterisks* around words to highlight them in brand color.
+
+description:
+  type: markdown
+  comment: Supporting text below the heading.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+faq_items:
+  type: array
+  comment: List of FAQ question and answer pairs.
+  options:
+    structures: _structures.faqItem
+
+open_first:
+  type: switch
+  comment: Whether the first FAQ item starts expanded.
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

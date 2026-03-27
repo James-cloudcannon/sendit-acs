@@ -2,91 +2,81 @@
 import CustomSection from "@builders/custom-section/CustomSection.astro";
 import Heading from "@core-elements/heading/Heading.astro";
 import SimpleText from "@core-elements/simple-text/SimpleText.astro";
-import TeamItem from "@page-sections/people/team-grid/TeamItem.astro";
-import Grid from "@wrappers/grid/Grid.astro";
-
-type MemberProps = Record<string, unknown>;
+import Image from "@core-elements/image/Image.astro";
 
 const {
-  eyebrow = "",
-  heading = "",
-  subtext = "",
-  teamMembers = [],
+  heading = "Our leadership team",
+  members = [],
+
   colorScheme = "inherit",
   backgroundColor,
-  paddingVertical = "4xl",
+  class: className,
   useDefaultEditableBinding = false,
   _component,
-  class: className,
   ...htmlAttributes
 } = Astro.props;
 ---
 
 <CustomSection
   class:list={["team-grid", className]}
-  maxContentWidth="2xl"
-  paddingHorizontal="lg"
-  paddingVertical={paddingVertical}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
   useDefaultEditableBinding={useDefaultEditableBinding}
   {...htmlAttributes}
 >
-  <SimpleText
-    alignX="center"
-    class="eyebrow"
-    data-prop="eyebrow"
-    text={eyebrow}
-  />
-  <Heading
-    class="team-grid-heading"
-    level="h2"
-    size="lg"
-    alignX="center"
-    data-prop="heading"
-  >
-    {heading}
-  </Heading>
-  <SimpleText
-    class="team-grid-subtext"
-    size="md"
-    alignX="center"
-    data-prop="subtext"
-    text={subtext}
-  />
-  <Grid
-    class="team-grid-grid"
-    gap="md"
-    minItemWidth={260}
-    maxItemWidth={400}
-    data-children-prop="teamMembers"
-    layout="start"
-  >
-    {
-      teamMembers.map((member: MemberProps) => (
-        <TeamItem
-          data-id="page-sections/people/team-grid/team-item"
-          data-editable="array-item"
-          {...member}
-          class="team-grid-item"
+  <Heading level="h2" size="2xl" alignX="center" text={heading} data-prop="heading" />
+
+  <div class="team-grid__grid" data-editable="array" data-prop="members">
+    {members.map((member) => (
+      <div class="team-grid__member" data-editable="array-item" data-id="page-sections/people/team-grid/member">
+        <Image
+          source={member.image?.source}
+          alt={member.image?.alt}
+          aspectRatio="square"
+          rounded={true}
         />
-      ))
-    }
-  </Grid>
+        <Heading level="h3" size="xs" alignX="center" data-prop="name">{member.name}</Heading>
+        <SimpleText text={member.title} size="sm" alignX="center" data-prop="title" />
+      </div>
+    ))}
+  </div>
 </CustomSection>
 
-<style>
+<style is:global>
   @layer page-sections {
-    :global(.team-grid-heading) {
-      margin-bottom: var(--spacing-sm);
+    .team-grid__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-xl);
+      width: 100%;
+      margin-top: var(--spacing-2xl);
     }
 
-    :global(.team-grid-subtext) {
+    @media (max-width: 768px) {
+      .team-grid__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .team-grid__member {
+      text-align: center;
+    }
+
+    .team-grid__member .image {
       margin-top: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
     }
 
-    :global(.team-grid-grid) {
-      margin-top: var(--spacing-xl);
+    .team-grid__member .heading {
+      margin-top: var(--spacing-sm);
+    }
+
+    .team-grid__member .simple-text {
+      color: var(--color-text-muted);
     }
   }
 </style>

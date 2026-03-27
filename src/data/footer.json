@@ -1,33 +1,36 @@
 {
-  "logoSource": "/images/logo.svg",
-  "logoAlt": "Logo",
+  "logoSource": "/images/footer-logo.svg",
+  "logoAlt": "Sendit logo",
   "links": [
     {
       "name": "Home",
       "path": "/"
     },
     {
-      "name": "Why",
-      "path": "/why/"
+      "name": "Features",
+      "path": "/features/"
+    },
+    {
+      "name": "Price",
+      "path": "/pricing/"
+    },
+    {
+      "name": "About",
+      "path": "/about/"
     },
     {
       "name": "Blog",
       "path": "/blog/"
-    }
-  ],
-  "socials": [
-    {
-      "icon": "social/github",
-      "link": "https://github.com"
     },
     {
-      "icon": "social/x",
-      "link": "https://twitter.com"
+      "name": "RSS Feed",
+      "path": "/feed.xml"
     },
     {
-      "icon": "social/linkedin",
-      "link": "https://linkedin.com"
+      "name": "Contact",
+      "path": "/contact/"
     }
   ],
-  "footerText": "© 2026 All rights reserved."
+  "socials": [],
+  "footerText": "\u00a9 Copyright 2026 MyCompany. All rights reserved."
 }

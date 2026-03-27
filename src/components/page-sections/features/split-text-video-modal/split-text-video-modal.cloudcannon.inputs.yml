@@ -1,0 +1,71 @@
+heading:
+  type: text
+  comment: Section heading text.
+
+description:
+  type: markdown
+  comment: Supporting paragraph text below the heading.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+buttonSections:
+  type: array
+  comment: Buttons displayed below the description text.
+  options:
+    structures: _structures.buttonSections
+
+thumbnail:
+  type: object
+  comment: Video thumbnail image shown before playback.
+
+thumbnail.source:
+  type: image
+  comment: Thumbnail image file.
+
+thumbnail.alt:
+  type: text
+  comment: Alt text for the thumbnail.
+
+video_type:
+  type: select
+  comment: Video provider type.
+  options:
+    values:
+      - id: youtube
+        name: YouTube
+      - id: vimeo
+        name: Vimeo
+
+video_id:
+  type: text
+  comment: YouTube or Vimeo video ID.
+
+video_title:
+  type: text
+  comment: Accessible title for the video.
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

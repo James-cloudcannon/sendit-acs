@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "logoSource": "/images/logo.svg",
+    "logoAlt": "Company logo",
+    "navData": [
+      {
+        "name": "Home",
+        "path": "/",
+        "children": []
+      },
+      {
+        "name": "Features",
+        "path": "/features/",
+        "children": []
+      },
+      {
+        "name": "Pricing",
+        "path": "/pricing/",
+        "children": []
+      },
+      {
+        "name": "About",
+        "path": "/about/",
+        "children": []
+      },
+      {
+        "name": "Blog",
+        "path": "/blog/",
+        "children": [
+          {
+            "name": "All Articles",
+            "path": "/blog/"
+          },
+          {
+            "name": "Blog Showcase",
+            "path": "/blog/blog-showcase/"
+          },
+          {
+            "name": "Marketing",
+            "path": "/tags/marketing/"
+          },
+          {
+            "name": "Technology",
+            "path": "/tags/technology/"
+          }
+        ]
+      },
+      {
+        "name": "Contact",
+        "path": "/contact/",
+        "children": []
+      }
+    ],
+    "buttonSections": [
+      {
+        "text": "Get Started",
+        "link": "/signup/",
+        "variant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "logoSource": "/images/footer-logo.svg",
+    "logoAlt": "logo",
+    "sections": [
+      {
+        "title": "Main Pages",
+        "links": [
+          { "name": "Home", "path": "/" },
+          { "name": "Features", "path": "/features/" },
+          { "name": "Price", "path": "/pricing/" },
+          { "name": "About", "path": "/about/" }
+        ]
+      },
+      {
+        "title": "Community",
+        "links": [
+          { "name": "Blog", "path": "/blog/" },
+          { "name": "RSS Feed", "path": "/feed.xml" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "name": "Contact", "path": "/contact/" }
+        ]
+      }
+    ],
+    "links": [
+      { "name": "Home", "path": "/" },
+      { "name": "Features", "path": "/features/" },
+      { "name": "Price", "path": "/pricing/" },
+      { "name": "About", "path": "/about/" },
+      { "name": "Blog", "path": "/blog/" },
+      { "name": "RSS Feed", "path": "/feed.xml" },
+      { "name": "Contact", "path": "/contact/" }
+    ],
+    "socials": [],
+    "footerText": "© Copyright 2026 MyCompany. All rights reserved."
+  },
+  "seo": {
+    "name": "Sendit",
+    "url": "https://top-quail.cloudvent.net/",
+    "description": "A polished, marketing website template built with Astro",
+    "logoSource": "/images/logo.svg",
+    "titleFormat": "{title} | Sendit"
+  }
+}

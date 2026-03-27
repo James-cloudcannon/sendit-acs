@@ -1,0 +1,167 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Card from "@wrappers/card/Card.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Divider from "@core-elements/divider/Divider.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+
+const {
+  plans = [],
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["pricing-list", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <div class="pricing-list__grid" data-editable="array" data-prop="plans">
+    {plans.map((plan) => (
+      <div
+        class:list={["pricing-list__card-wrapper", plan.featured && "pricing-list__card-wrapper--featured"]}
+        data-editable="array-item"
+        data-id="page-sections/info-blocks/pricing-list/plan"
+      >
+        <Card
+          rounded={true}
+          backgroundColor="base"
+          paddingHorizontal="lg"
+          paddingVertical="lg"
+          border={true}
+        >
+          <Heading
+            level="h3"
+            size="md"
+            alignX="center"
+            text={plan.name}
+            data-prop="name"
+            class={plan.featured ? "pricing-list__featured-name" : ""}
+          />
+          <SimpleText text={plan.description} size="sm" alignX="center" data-prop="description" />
+
+          <div class="pricing-list__price-row">
+            <span class="pricing-list__price" data-prop="price">{plan.price}</span>
+            {plan.original_price && (
+              <span class="pricing-list__original-price">{plan.original_price}</span>
+            )}
+          </div>
+
+          <Divider paddingVertical="sm" />
+
+          <ul class="pricing-list__features">
+            {plan.features && plan.features.map((feature) => (
+              <li class="pricing-list__feature-item">
+                <svg class="pricing-list__check" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>{feature.text || feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <ButtonGroup
+            alignX="center"
+            buttonSections={plan.buttonSections}
+            data-children-prop="buttonSections"
+          />
+        </Card>
+      </div>
+    ))}
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .pricing-list__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 340px));
+      justify-content: center;
+      align-items: end;
+      gap: var(--spacing-xl);
+      width: 100%;
+      margin-top: var(--spacing-lg);
+    }
+
+    @media (max-width: 768px) {
+      .pricing-list__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-inline: auto;
+      }
+    }
+
+    .pricing-list__card-wrapper > .card {
+      margin-top: 0;
+      height: 100%;
+    }
+
+    .pricing-list__card-wrapper--featured > .card > .card-inner {
+      border-top: 3px solid var(--color-brand);
+      box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 4px 10px -4px rgb(0 0 0 / 0.1);
+    }
+
+    .pricing-list__card-wrapper--featured {
+      transform: translateY(-8px);
+    }
+
+    .pricing-list__featured-name .heading-text {
+      color: var(--color-brand);
+    }
+
+    .pricing-list__price-row {
+      text-align: center;
+      margin-top: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: var(--spacing-sm);
+    }
+
+    .pricing-list__price {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--color-text-strong);
+      line-height: 1;
+    }
+
+    .pricing-list__original-price {
+      font-size: var(--font-size-lg);
+      color: var(--color-text-muted);
+      text-decoration: line-through;
+    }
+
+    .pricing-list__features {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-md) 0;
+    }
+
+    .pricing-list__feature-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-xs) 0;
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+    }
+
+    .pricing-list__check {
+      flex-shrink: 0;
+      color: var(--color-brand);
+    }
+  }
+</style>

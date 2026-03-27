@@ -1,0 +1,39 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+
+const {
+  heading = "",
+  description = "",
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["hero-banner", className]}
+  maxContentWidth="2xl"
+  paddingHorizontal="xl"
+  paddingVertical="5xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Heading level="h1" size="3xl" alignX="center" data-prop="heading" text={heading} />
+  <SimpleText size="lg" alignX="center" data-prop="description" text={description} />
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .hero-banner {
+      text-align: center;
+    }
+  }
+</style>

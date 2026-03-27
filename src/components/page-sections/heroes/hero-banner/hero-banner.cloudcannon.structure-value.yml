@@ -1,0 +1,20 @@
+label: Hero Banner
+icon: panorama_wide_angle
+description: Simple centered banner with a large heading and subtitle text.
+value:
+  _component: page-sections/heroes/hero-banner
+  heading: ""
+  description: ""
+  colorScheme: inherit
+  backgroundColor: accent
+preview:
+  text:
+    - Hero Banner
+  subtext:
+    - key: heading
+  icon: panorama_wide_angle
+picker_preview:
+  text: Hero Banner
+  subtext: Simple centered banner with a large heading and subtitle text.
+_inputs_from_glob:
+  - /src/components/page-sections/heroes/hero-banner/hero-banner.cloudcannon.inputs.yml

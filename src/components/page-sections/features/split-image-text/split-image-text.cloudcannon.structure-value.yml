@@ -1,0 +1,33 @@
+label: Split Image Text
+icon: auto_awesome
+description: Two-column section with text content and an image, with optional left/right flip.
+value:
+  _component: page-sections/features/split-image-text
+  heading: ""
+  description: ""
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: Try This Free
+      hideText: false
+      link: ""
+      iconName: arrow-right
+      iconPosition: after
+      variant: text
+      size: lg
+  image:
+    source: ""
+  image_alt: ""
+  reversed: false
+  colorScheme: inherit
+  backgroundColor: none
+preview:
+  text:
+    - Split Image Text
+  subtext:
+    - key: heading
+  icon: auto_awesome
+picker_preview:
+  text: Split Image Text
+  subtext: Two-column section with text and image.
+_inputs_from_glob:
+  - /src/components/page-sections/features/split-image-text/split-image-text.cloudcannon.inputs.yml

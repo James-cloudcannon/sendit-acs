@@ -1,0 +1,52 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Image from "@core-elements/image/Image.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+
+const {
+  illustration = {},
+  heading = "Oops! Page not found.",
+  buttonSections = [],
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["four-oh-four-page", className]}
+  maxContentWidth="md"
+  paddingHorizontal="xl"
+  paddingVertical="5xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Image
+    source={illustration.source}
+    alt={illustration.alt}
+    rounded={false}
+    data-prop-src="illustration.source"
+    data-prop-alt="illustration.alt"
+  />
+  <Heading level="h1" size="xl" alignX="center" data-prop="heading">{heading}</Heading>
+  <ButtonGroup
+    alignX="center"
+    buttonSections={buttonSections}
+    data-children-prop="buttonSections"
+  />
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .four-oh-four-page {
+      text-align: center;
+    }
+  }
+</style>

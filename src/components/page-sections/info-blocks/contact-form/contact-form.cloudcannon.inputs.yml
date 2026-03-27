@@ -1,0 +1,59 @@
+heading:
+  type: text
+  comment: Main heading for the contact details section.
+
+contact_text:
+  type: text
+  comment: Address or introductory text below the heading.
+
+phone_label:
+  type: text
+  comment: Label for the phone section (e.g., "Phone").
+
+phone_value:
+  type: text
+  comment: Phone number to display.
+
+email_label:
+  type: text
+  comment: Label for the email section (e.g., "Email").
+
+email_value:
+  type: text
+  comment: Email address to display.
+
+form_heading:
+  type: text
+  comment: Heading inside the form card (e.g., "Say Hello").
+
+form_action:
+  type: text
+  comment: Form action URL for submission.
+
+submit_text:
+  type: text
+  comment: Text for the submit button.
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

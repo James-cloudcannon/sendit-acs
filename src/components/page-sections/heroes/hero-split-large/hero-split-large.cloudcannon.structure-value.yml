@@ -1,0 +1,45 @@
+label: Hero Split Large
+icon: panorama_wide_angle
+description: Full-viewport hero with text on the left and image(s) on the right. Supports single image or multi-image collage.
+value:
+  _component: page-sections/heroes/hero-split-large
+  heading: Beautiful web campaigns
+  description: ""
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: Try This Free
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: primary
+      size: lg
+  images:
+    - source: ""
+      alt: ""
+  colorScheme: inherit
+  backgroundColor: accent
+preview:
+  text:
+    - Hero Split Large
+  subtext:
+    - key: heading
+  icon: panorama_wide_angle
+picker_preview:
+  text: Hero Split Large
+  subtext: Full-viewport hero with text and image(s).
+_inputs_from_glob:
+  - /src/components/page-sections/heroes/hero-split-large/hero-split-large.cloudcannon.inputs.yml
+
+_structures:
+  heroImage:
+    values:
+      - label: Image
+        value:
+          source: ""
+          alt: ""
+        _inputs:
+          source:
+            type: image
+          alt:
+            type: text

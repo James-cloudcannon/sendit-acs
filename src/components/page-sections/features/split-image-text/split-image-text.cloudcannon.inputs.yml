@@ -1,0 +1,57 @@
+heading:
+  type: text
+  comment: Section heading text.
+
+description:
+  type: markdown
+  comment: Supporting paragraph text below the heading.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+buttonSections:
+  type: array
+  comment: Text link or button displayed below the description.
+  options:
+    structures: _structures.buttonSections
+
+image:
+  type: object
+  comment: Feature image displayed beside the text content.
+
+image.source:
+  type: image
+  comment: Image file path.
+
+image_alt:
+  type: text
+  comment: Alt text for the feature image.
+
+reversed:
+  type: switch
+  comment: When enabled, the image appears on the left and text on the right.
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

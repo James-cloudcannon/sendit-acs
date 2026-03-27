@@ -1,6 +1,6 @@
 {
   "logoSource": "/images/logo.svg",
-  "logoAlt": "Logo",
+  "logoAlt": "Sendit logo",
   "navData": [
     {
       "name": "Home",
@@ -8,26 +8,58 @@
       "children": []
     },
     {
-      "name": "Why",
-      "path": "/why/",
+      "name": "Features",
+      "path": "/features/",
+      "children": []
+    },
+    {
+      "name": "Pricing",
+      "path": "/pricing/",
+      "children": []
+    },
+    {
+      "name": "About",
+      "path": "/about/",
       "children": []
     },
     {
       "name": "Blog",
       "path": "/blog/",
+      "children": [
+        {
+          "name": "All Articles",
+          "path": "/blog/"
+        },
+        {
+          "name": "Blog Showcase",
+          "path": "/blog/blog-showcase/"
+        },
+        {
+          "name": "Marketing",
+          "path": "/tags/marketing/"
+        },
+        {
+          "name": "Technology",
+          "path": "/tags/technology/"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "path": "/contact/",
       "children": []
     }
   ],
   "buttonSections": [
     {
       "_component": "building-blocks/core-elements/button",
-      "text": "Search",
-      "hideText": true,
-      "link": "/search/",
-      "iconName": "magnifying-glass",
+      "text": "Get Started",
+      "hideText": false,
+      "link": "/signup/",
+      "iconName": "",
       "iconPosition": "before",
-      "variant": "ghost",
-      "size": "lg"
+      "variant": "tertiary",
+      "size": "md"
     }
   ]
 }

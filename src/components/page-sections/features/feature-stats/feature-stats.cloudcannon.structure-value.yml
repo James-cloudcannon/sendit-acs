@@ -1,0 +1,64 @@
+label: Feature Stats
+icon: bar_chart
+description: Centered section with heading, paragraph, and animated stat counters.
+value:
+  _component: page-sections/features/feature-stats
+  heading: "Scale your Business"
+  description: ""
+  stats:
+    - number: 0
+      prefix: "$"
+      suffix: "m"
+      label: "Venture capital raised"
+    - number: 0
+      prefix: ""
+      suffix: ""
+      label: "Established in"
+    - number: 0
+      prefix: ""
+      suffix: "+"
+      label: "Amazing team members"
+    - number: 0
+      prefix: ""
+      suffix: "+"
+      label: "Active users and growing"
+  colorScheme: inherit
+  backgroundColor: none
+preview:
+  text:
+    - Feature Stats
+  subtext:
+    - key: heading
+  icon: bar_chart
+picker_preview:
+  text: Feature Stats
+  subtext: Centered section with heading, paragraph, and animated stat counters.
+_inputs_from_glob:
+  - /src/components/page-sections/features/feature-stats/feature-stats.cloudcannon.inputs.yml
+_structures:
+  statItem:
+    values:
+      - label: Stat
+        value:
+          number: 0
+          prefix: ""
+          suffix: ""
+          label: ""
+        preview:
+          text:
+            - key: label
+          subtext:
+            - key: number
+        _inputs:
+          number:
+            type: number
+            comment: Target number for the counter animation.
+          prefix:
+            type: text
+            comment: Text before the number (e.g., "$").
+          suffix:
+            type: text
+            comment: Text after the number (e.g., "+", "m", "%").
+          label:
+            type: text
+            comment: Descriptive label below the counter.

@@ -1,0 +1,67 @@
+@keyframes astroFadeInOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes astroFadeIn {
+	from {
+		opacity: 0;
+		mix-blend-mode: plus-lighter;
+	}
+	to {
+		opacity: 1;
+		mix-blend-mode: plus-lighter;
+	}
+}
+
+@keyframes astroFadeOut {
+	from {
+		opacity: 1;
+		mix-blend-mode: plus-lighter;
+	}
+	to {
+		opacity: 0;
+		mix-blend-mode: plus-lighter;
+	}
+}
+
+@keyframes astroSlideFromRight {
+	from {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes astroSlideFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes astroSlideToRight {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes astroSlideToLeft {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+
+	[data-astro-transition-scope] {
+		animation: none !important;
+	}
+}
+dialog[data-astro-cid-gaumycia]::backdrop{background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);animation:backdrop-fade-in 0.3s ease-out}dialog[data-astro-cid-gaumycia][open]{animation:modal-fade-in 0.3s ease-out}dialog[data-astro-cid-gaumycia]:not([open]){opacity:0;transform:scale(0.95);pointer-events:none}dialog[data-astro-cid-gaumycia].closing{animation:modal-fade-out 0.3s ease-in forwards}dialog[data-astro-cid-gaumycia].closing::backdrop{animation:backdrop-fade-out 0.3s ease-in forwards}@keyframes backdrop-fade-in{from{opacity:0}to{opacity:1}}@keyframes backdrop-fade-out{from{opacity:1}to{opacity:0}}@keyframes modal-fade-in{from{opacity:0;transform:scale(0.95) translateY(-10px)}to{opacity:1;transform:scale(1) translateY(0)}}@keyframes modal-fade-out{from{opacity:1;transform:scale(1) translateY(0)}to{opacity:0;transform:scale(0.95) translateY(-10px)}}.video-play-wrapper[data-astro-cid-xiihbmj7]::before,.video-play-wrapper[data-astro-cid-xiihbmj7]::after{content:"";background:white;border-radius:50%;position:absolute;transform-origin:top left;animation-name:grow;animation-duration:2s;animation-iteration-count:infinite;animation-direction:alternate;top:50%;left:50%;transform:translate(-50%,-50%)}.video-play-wrapper[data-astro-cid-xiihbmj7]::after{width:110px;height:110px;opacity:0.5}.video-play-wrapper[data-astro-cid-xiihbmj7]::before{width:140px;height:140px;animation-delay:1s;opacity:0.4}@keyframes grow{0%{transform:scale(0.9) translate(-50%,-50%)}100%{transform:scale(1) translate(-50%,-50%)}}.video-play-wrapper[data-astro-cid-qlkqls4c]::before,.video-play-wrapper[data-astro-cid-qlkqls4c]::after{content:"";background:white;border-radius:50%;position:absolute;transform-origin:top left;animation-name:grow;animation-duration:2s;animation-iteration-count:infinite;animation-direction:alternate;top:50%;left:50%;transform:translate(-50%,-50%)}.video-play-wrapper[data-astro-cid-qlkqls4c]::after{width:110px;height:110px;opacity:0.5}.video-play-wrapper[data-astro-cid-qlkqls4c]::before{width:140px;height:140px;animation-delay:1s;opacity:0.4}@keyframes grow{0%{transform:scale(0.9) translate(-50%,-50%)}100%{transform:scale(1) translate(-50%,-50%)}}

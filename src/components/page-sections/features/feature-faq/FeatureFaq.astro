@@ -1,0 +1,136 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Text from "@core-elements/text/Text.astro";
+
+const {
+  heading = "Have *Questions?*",
+  description = "",
+  faq_items = [],
+  open_first = true,
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const accordionName = "feature-faq-accordion";
+---
+
+<CustomSection
+  class:list={["feature-faq", className]}
+  maxContentWidth="2xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Heading level="h2" size="2xl" alignX="center" data-prop="heading" text={heading} />
+  <SimpleText size="md" alignX="center" data-prop="description" text={description} />
+
+  <div class="feature-faq__accordion" data-editable="array" data-prop="faq_items">
+    {faq_items.map((item, index) => (
+      <details
+        class="feature-faq__item"
+        open={open_first && index === 0}
+        name={accordionName}
+        data-editable="array-item"
+        data-id="page-sections/features/feature-faq/faqItem"
+      >
+        <summary class="feature-faq__summary">
+          <div class="feature-faq__summary-left">
+            <span class="feature-faq__number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            <span class="feature-faq__title" data-prop="title">{item.title}</span>
+          </div>
+          <svg class="feature-faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div class="feature-faq__answer">
+          <Text text={item.answer} data-prop="answer" />
+        </div>
+      </details>
+    ))}
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .feature-faq__accordion {
+      margin-top: var(--spacing-xl);
+      width: 100%;
+    }
+
+    .feature-faq__item {
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--spacing-sm);
+      overflow: hidden;
+    }
+
+    .feature-faq__summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-md) var(--spacing-lg);
+      cursor: pointer;
+      list-style: none;
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-lg);
+    }
+
+    .feature-faq__summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .feature-faq__summary-left {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+
+    .feature-faq__number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius-full);
+      background: var(--color-brand);
+      color: var(--color-text-on-brand);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-bold);
+      flex-shrink: 0;
+    }
+
+    .feature-faq__title {
+      color: var(--color-text-strong);
+    }
+
+    .feature-faq__chevron {
+      flex-shrink: 0;
+      color: var(--color-text-muted);
+      transition: transform 200ms ease;
+    }
+
+    .feature-faq__item[open] > .feature-faq__summary .feature-faq__chevron {
+      transform: rotate(180deg);
+    }
+
+    .feature-faq__answer {
+      padding: 0 var(--spacing-lg) var(--spacing-lg);
+      padding-left: calc(var(--spacing-lg) + 2rem + var(--spacing-md));
+    }
+
+    .feature-faq__answer > .text {
+      margin-top: 0;
+      color: var(--color-text-muted);
+    }
+  }
+</style>

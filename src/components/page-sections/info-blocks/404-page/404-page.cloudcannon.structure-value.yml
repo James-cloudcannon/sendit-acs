@@ -1,0 +1,31 @@
+label: 404 Page
+icon: error_outline
+description: 404 error page with centered illustration, heading, and CTA button.
+value:
+  _component: page-sections/info-blocks/404-page
+  illustration:
+    source: ""
+    alt: "404"
+  heading: "Oops! Page not found."
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: Try again
+      hideText: false
+      link: /
+      iconName: ""
+      iconPosition: before
+      variant: primary
+      size: md
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - 404 Page
+  subtext:
+    - key: heading
+  icon: error_outline
+picker_preview:
+  text: 404 Page
+  subtext: 404 error page with centered illustration, heading, and CTA button.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/404-page/404-page.cloudcannon.inputs.yml

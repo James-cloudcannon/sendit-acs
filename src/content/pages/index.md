@@ -1,160 +1,129 @@
 ---
-_schema: default
-title: Astro Component Starter
-description: Build fast, customizable Astro sites with a modern component starter that is easy to edit and maintain.
+title: Home
 pageSections:
-  - _component: page-sections/heroes/hero-center
-    eyebrow:
-    heading: The Astro Component Starter for building any site
-    subtext: >-
-      Built on web fundamentals. Easy to customize, fast to use, and simple to
-      maintain.
+  - _component: page-sections/features/split-image-text
+    heading: Email Campaign in one minute
+    description: Send an email campaign with one click, in just minutes. Automate your emails and content, while keeping the human touch.
+    image:
+      source: /src/assets/images/feature-card-one.png
+    image_alt: Message inbox
+    reversed: false
+    colorScheme: inherit
+    backgroundColor: none
     buttonSections:
       - _component: building-blocks/core-elements/button
-        text: Explore Components
+        text: Try This Free
+        link: /signup
+        iconName: arrow-right
+        iconPosition: after
         hideText: false
-        link: /component-docs/
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
-      - _component: building-blocks/core-elements/button
-        text: View in GitHub
-        hideText: false
-        link: https://github.com/CloudCannon/astro-component-starter
-        iconName: ''
-        iconPosition: before
-        variant: secondary
-        size: md
+        variant: text
+        size: lg
+  - _component: page-sections/features/split-image-text
+    heading: See every Lead in one Place
+    description: "Sales analytics and automation made simple: see every sales lead in one place, regardless of where it came from."
+    image:
+      source: /src/assets/images/feature-card-two.png
+    image_alt: Visitor chart
+    reversed: false
     colorScheme: inherit
-    backgroundColor: base
-  - _component: page-sections/features/feature-split
-    eyebrow: Built for Astro
-    heading: Fast, modern, and easy to work with
-    subtext: >-
-      The Component Starter takes full advantage of Astro's zero-JS-by-default
-      approach. You get fast pages, simple routing, and a component system that
-      stays easy to use as your site grows.
-    buttonSections: []
-    imageSource: /src/assets/images/component-docs/website-feature.svg
-    imageAlt: Website Feature
-    imageAspectRatio: none
-    imageRounded: false
-    reverse: false
-    colorScheme: inherit
-    backgroundColor: base
-  - _component: page-sections/features/feature-split
-    eyebrow: CloudCannon Ready
-    heading: Easy visual editing
-    subtext: >-
-      Every component is built to work seamlessly in CloudCannon's Visual
-      Editor. Developers can create and style custom Page Sections with Astro.
-      Editors can click, change, and rearrange content right on the page without
-      touching the code or guessing where anything lives.
-    buttonSections: []
-    imageSource: /src/assets/images/component-docs/website-split.svg
-    imageAlt: Website Split
-    imageAspectRatio: none
-    imageRounded: false
-    reverse: true
-    colorScheme: inherit
-    backgroundColor:
-    paddingVertical: lg
-  - _component: page-sections/features/feature-split
-    eyebrow: Performance
-    heading: Fast by architecture, not by accident
-    subtext: >-
-      Your components render to static HTML, keeping bundles lean and pages
-      instant. Your users get instant page loads. You get a modern developer
-      experience.
-    buttonSections: []
-    imageSource: /src/assets/images/component-docs/website-hero.svg
-    imageAlt: Website Hero
-    imageAspectRatio: none
-    imageRounded: false
-    reverse: false
-    colorScheme: inherit
-    backgroundColor: base
-  - _component: page-sections/features/feature-split
-    eyebrow: Documentation
-    heading: Every component, clearly documented
-    subtext: >-
-      Each component comes with straightforward docs, real examples, full
-      descriptions of every property, and clear guidance without having to dig
-      through source files.
-    buttonSections: []
-    imageSource: /src/assets/images/component-docs/website-documented.svg
-    imageAlt: Website Hero
-    imageAspectRatio: none
-    imageRounded: false
-    reverse: true
-    colorScheme: inherit
-    backgroundColor: base
-  - _component: page-sections/features/feature-grid
-    eyebrow: Principles
-    heading: Built for real-world web projects
-    subtext: No trends. No noise. Just reliability.
-    gap: xl
-    minItemWidth: 280
-    maxItemWidth: 360
-    features:
-      - title: Web fundamentals
-        description: >-
-          Semantic HTML. Lean CSS. JavaScript only when it's needed. The stack
-          is boring by design, and that’s exactly why it works.
-        iconName: cube
-        iconColor: blue
-      - title: Built for speed
-        description: >-
-          Static-rendered, minimal payloads, zero waste. Built to be extremely
-          fast from the first byte.
-        iconName: bolt
-        iconColor: yellow
-      - title: Everything just fits
-        description: >-
-          Simple, predictable components that play nice together. Build bigger
-          pieces without creating a maintenance mess.
-        iconName: puzzle-piece
-        iconColor: green
-      - title: Controlled editing
-        description: >-
-          Enough freedom for editors to move fast. Enough structure for
-          developers to sleep at night.
-        iconName: pencil
-        iconColor: purple
-      - title: Adaptable
-        description: >-
-          Purposefully plain styling. The whole component starter adapts to your
-          designs without a fight.
-        iconName: paint-brush
-        iconColor: pink
-    colorScheme: inherit
-    backgroundColor: surface
-    align: center
-  - _component: page-sections/ctas/cta-center
-    heading: Ready to start building?
-    subtext: >-
-      Browse the complete Astro Component Starter and see live examples of every
-      component in action. All components are ready to use in CloudCannon and
-      are fully customizable.
+    backgroundColor: none
     buttonSections:
       - _component: building-blocks/core-elements/button
-        text: Explore Components
+        text: Try This Free
+        link: /signup
+        iconName: arrow-right
+        iconPosition: after
         hideText: false
-        link: /component-docs/
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
+        variant: text
+        size: lg
+  - _component: page-sections/features/split-image-text
+    heading: 100% free uploads
+    description: Sendit is used by everyone from small businesses to fortune 500 companies. Browse our collection of email marketing templates and start sending beautiful emails in minutes.
+    image:
+      source: /src/assets/images/feature-card-three.png
+    image_alt: File upload
+    reversed: false
+    colorScheme: inherit
+    backgroundColor: none
+    buttonSections:
       - _component: building-blocks/core-elements/button
-        text: View in GitHub
+        text: Try This Free
+        link: /signup
+        iconName: arrow-right
+        iconPosition: after
         hideText: false
-        link: https://github.com/CloudCannon/astro-component-starter
-        iconName: ''
-        iconPosition: before
-        variant: tertiary
-        size: md
+        variant: text
+        size: lg
+  - _component: page-sections/features/feature-stats
+    heading: Scale your <em>Business</em>
+    description: We have an extensive library of pre-written sales emails, proven marketing templates, and more to get you started on your next project.
+    colorScheme: inherit
+    backgroundColor: none
+    stats:
+      - number: 0
+        prefix: $
+        suffix: m
+        label: Venture capital raised
+      - number: 0
+        prefix: ""
+        suffix: ""
+        label: Established in
+      - number: 0
+        prefix: ""
+        suffix: +
+        label: Amazing team members
+      - number: 0
+        prefix: ""
+        suffix: +
+        label: Active users and growing
+  - _component: page-sections/features/feature-testimonial-card-grid
+    heading: Build relationships that *last*
+    description: Customers from around the world are building game changing email marketing campaigns.
     colorScheme: dark
-    backgroundColor: surface
-    rounded: false
+    backgroundColor: base
+    testimonials:
+      - authorName: Pete Fish
+        authorDescription: CMO at Clear Appeal
+        text: Sendit has taken Clear Appeal to the next level with its beautiful email campaigns.
+        authorImage: /src/assets/images/logo-2.jpg
+      - authorName: Dolly Watson
+        authorDescription: Digital Marketer at Time Cop
+        text: Wow, what a difference Sendit has made. My customers are more engaged than ever.
+        authorImage: /src/assets/images/logo-3.jpg
+      - authorName: Simon Moriarty
+        authorDescription: Head of Marketing at Pinnacle Mines
+        text: I can't imagine life without Sendit now, I have no idea how we were surviving before.
+        authorImage: /src/assets/images/logo-4.jpg
+  - _component: page-sections/ctas/cta-centre
+    heading: Sendit *Features*
+    description: Our platform offers the most advanced features including automated email content creation, dynamic personalization, and customer segmentation.
+    colorScheme: null
+    backgroundColor: null
+  - _component: page-sections/features/feature-video-modal
+    video_type: vimeo
+    video_id: "45830194"
+    video_title: Video Player
+    thumbnail:
+      source: /src/assets/images/video-thum.avif
+      alt: Thumbnail for video
+    background_color: null
+    colorScheme: null
+  - _component: page-sections/heroes/hero-split-large
+    heading: Beautiful web campaigns
+    description: With Sendit, you can quickly create beautiful rich emails that capture a reader's attention, engage them, and convert them into customers.
+    colorScheme: inherit
+    backgroundColor: accent
+    buttonSections:
+      - _component: building-blocks/core-elements/button
+        text: Try This Free
+        link: /signup/
+        iconName: ""
+        iconPosition: before
+        hideText: false
+        variant: primary
+        size: lg
+    images:
+      - source: /src/assets/images/hero-image.avif
+        alt: Reports dashboard
 ---

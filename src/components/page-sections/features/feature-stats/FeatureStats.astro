@@ -1,0 +1,75 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Counter from "@core-elements/counter/Counter.astro";
+
+const {
+  heading = "Scale your Business",
+  description = "",
+  stats = [],
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["feature-stats", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Heading level="h2" size="2xl" alignX="center" data-prop="heading" text={heading} />
+  <SimpleText size="md" alignX="center" data-prop="description" text={description} />
+
+  <div class="feature-stats__grid" data-editable="array" data-prop="stats">
+    {stats.map((stat) => (
+      <div class="feature-stats__item" data-editable="array-item" data-id="page-sections/features/feature-stats/statItem">
+        <Counter
+          number={stat.number}
+          prefix={stat.prefix}
+          suffix={stat.suffix}
+          alignX="center"
+          size="2xl"
+        />
+        <SimpleText text={stat.label} alignX="center" size="md" />
+      </div>
+    ))}
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .feature-stats__grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-lg);
+      width: 100%;
+      margin-top: var(--spacing-lg);
+    }
+
+    .feature-stats__item {
+      flex: 1 1 200px;
+      max-width: 320px;
+      min-width: min(200px, 100%);
+    }
+
+    .feature-stats__item > .counter {
+      margin-top: 0;
+    }
+
+    .feature-stats__item > .simple-text {
+      color: var(--color-text-muted);
+    }
+  }
+</style>

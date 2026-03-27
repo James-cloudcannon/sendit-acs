@@ -1,0 +1,54 @@
+video_type:
+  type: select
+  comment: Video provider type.
+  options:
+    values:
+      - id: youtube
+        name: YouTube
+      - id: vimeo
+        name: Vimeo
+
+video_id:
+  type: text
+  comment: YouTube or Vimeo video ID.
+
+video_title:
+  type: text
+  comment: Accessible title for the video.
+
+thumbnail:
+  type: object
+  comment: Video thumbnail image shown before playback.
+
+thumbnail.source:
+  type: image
+  comment: Thumbnail image file.
+
+thumbnail.alt:
+  type: text
+  comment: Alt text for the thumbnail.
+
+background_color:
+  type: select
+  comment: Section background color.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark

@@ -1,0 +1,94 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Card from "@wrappers/card/Card.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import Form from "@forms/form/Form.astro";
+import Input from "@forms/input/Input.astro";
+import Submit from "@forms/submit/Submit.astro";
+import Divider from "@core-elements/divider/Divider.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+
+const {
+  heading = "Log In",
+  form_action = "",
+  fields = [],
+  submit_text = "Log In",
+  social_buttons = [],
+  footer_text = "Create an Account",
+  footer_link = "/signup/",
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const footerMarkdown = footer_link
+  ? `[${footer_text}](${footer_link})`
+  : footer_text;
+---
+
+<CustomSection
+  class:list={["login-form", className]}
+  maxContentWidth="sm"
+  paddingHorizontal="xl"
+  paddingVertical="5xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Card
+    rounded={true}
+    backgroundColor="base"
+    paddingHorizontal="xl"
+    paddingVertical="xl"
+    border={true}
+  >
+    <Heading level="h1" size="2xl" alignX="center" text={heading} data-prop="heading" />
+
+    <Form action={form_action} _component="building-blocks/forms/form">
+      {fields.map((field) => (
+        <Input
+          label={field.label}
+          name={field.name}
+          type={field.type || "text"}
+          placeholder={field.placeholder}
+          required={field.required || false}
+        />
+      ))}
+      <Submit text={submit_text} variant="primary" size="lg" data-prop="submit_text" />
+    </Form>
+
+    <Divider paddingVertical="md" />
+
+    <ButtonGroup
+      direction="column"
+      alignX="center"
+      buttonSections={social_buttons}
+      data-children-prop="social_buttons"
+    />
+
+    <Divider paddingVertical="sm" />
+
+    <SimpleText text={footerMarkdown} alignX="center" data-prop="footer_text" />
+  </Card>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .login-form {
+      .submit .button-inner {
+        width: 100%;
+        border-radius: var(--radius-lg);
+      }
+
+      .button-group__items.column .button .button-inner {
+        width: 100%;
+      }
+    }
+  }
+</style>

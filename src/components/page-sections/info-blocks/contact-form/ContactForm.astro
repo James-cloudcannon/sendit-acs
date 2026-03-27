@@ -1,0 +1,89 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Split from "@wrappers/split/Split.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Spacer from "@core-elements/spacer/Spacer.astro";
+import Card from "@wrappers/card/Card.astro";
+import Form from "@forms/form/Form.astro";
+import Input from "@forms/input/Input.astro";
+import Textarea from "@forms/textarea/Textarea.astro";
+import Submit from "@forms/submit/Submit.astro";
+
+const {
+  heading = "Contact Details",
+  contact_text = "",
+  phone_label = "Phone",
+  phone_value = "",
+  email_label = "Email",
+  email_value = "",
+  form_heading = "Say Hello",
+  form_action = "",
+  submit_text = "Send message",
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["contact-form", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Split
+    distributionMode="third-two-thirds"
+    verticalAlignment="top"
+    gap="2xl"
+  >
+    <div slot="first">
+      <Heading level="h2" size="lg" data-prop="heading" text={heading} />
+      <SimpleText size="md" data-prop="contact_text" text={contact_text} />
+      <Spacer size="lg" />
+      <Heading level="h3" size="sm" data-prop="phone_label" text={phone_label} />
+      <SimpleText size="md" data-prop="phone_value" text={phone_value} />
+      <Spacer size="lg" />
+      <Heading level="h3" size="sm" data-prop="email_label" text={email_label} />
+      <SimpleText size="md" data-prop="email_value" text={email_value} />
+    </div>
+    <div slot="second">
+      <Card
+        rounded={true}
+        backgroundColor="base"
+        paddingHorizontal="lg"
+        paddingVertical="lg"
+        class="contact-form__card"
+      >
+        <Heading level="h3" size="lg" data-prop="form_heading" text={form_heading} />
+        <Form action={form_action} _component="building-blocks/forms/form">
+          <Input label="Full Name" name="name" placeholder="Enter First Name" />
+          <Input label="Phone number" name="phone" type="tel" placeholder="Enter Phone Number" />
+          <Input label="Email Address" name="email" type="email" placeholder="Enter Email Address" />
+          <Textarea label="Your Messages" name="message" placeholder="Enter your message" />
+          <Submit text={submit_text} variant="primary" size="lg" data-prop="submit_text" />
+        </Form>
+      </Card>
+    </div>
+  </Split>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .contact-form__card > .card-inner {
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .contact-form__card .submit {
+      width: 100%;
+    }
+  }
+</style>

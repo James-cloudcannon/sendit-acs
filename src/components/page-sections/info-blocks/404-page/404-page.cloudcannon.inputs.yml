@@ -1,0 +1,45 @@
+illustration:
+  type: object
+  comment: Illustration image for the 404 page.
+
+illustration.source:
+  type: image
+  comment: Image file path for the 404 illustration.
+
+illustration.alt:
+  type: text
+  comment: Alt text for the 404 illustration.
+
+heading:
+  type: text
+  comment: Error heading text displayed below the illustration.
+
+buttonSections:
+  type: array
+  comment: CTA buttons below the heading.
+  options:
+    structures: _structures.buttonSections
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

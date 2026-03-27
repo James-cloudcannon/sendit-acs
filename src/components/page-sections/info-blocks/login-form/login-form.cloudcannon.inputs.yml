@@ -1,0 +1,55 @@
+heading:
+  type: text
+  comment: Login form heading text.
+
+form_action:
+  type: text
+  comment: Form action URL for submission.
+
+fields:
+  type: array
+  comment: Form input fields.
+  options:
+    structures: _structures.loginField
+
+submit_text:
+  type: text
+  comment: Submit button label text.
+
+social_buttons:
+  type: array
+  comment: Social sign-in buttons.
+  options:
+    structures: _structures.buttonSections
+
+footer_text:
+  type: text
+  comment: Text for the bottom link (e.g. "Create an Account").
+
+footer_link:
+  type: text
+  comment: URL for the bottom link.
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

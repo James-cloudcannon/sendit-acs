@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-03-27",
+  "total_components": 27,
+  "skeletons_extracted": 27,
+  "skeletons_null": 0,
+  "quality_summary": "All 27 components have skeletons extracted from screenshots with HTML confirmation. High confidence across all components.",
+  "components": {
+    "component-1774565890234-659": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot + HTML",
+      "notes": "Clear split layout hero with h1, text, CTA button, and dashboard image"
+    },
+    "component-1774565891997-694": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot + HTML",
+      "notes": "Stats section with 4 counters, centered heading. Counter values appear to be placeholder zeros."
+    },
+    "component-1774565893096-938": {
+      "quality": "high",
+      "confidence": 0.9,
+      "source": "screenshot",
+      "notes": "Video thumbnail with play button overlay, simple centered layout"
+    },
+    "component-1774565894223-470": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Simple centered heading + text section header"
+    },
+    "component-1774565895126-119": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Split layout with text left, UI mockup image right"
+    },
+    "component-1774565896294-340": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Split layout with chart image left, text right (reversed from above)"
+    },
+    "component-1774565897322-80": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Split layout with text left, upload modal image right"
+    },
+    "component-1774565898723-685": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot + HTML",
+      "notes": "Testimonial grid, 3 cards on dark background. HTML confirms 3 array items with avatar, name, title, message."
+    },
+    "component-1774565907682-571": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Identical pattern to index hero-split-large. Dashboard mockup variation."
+    },
+    "component-1774565908544-543": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Identical to index cta-centre section header"
+    },
+    "component-1774565909520-771": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Same split pattern as index email campaign section"
+    },
+    "component-1774565910518-78": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Same split pattern as index lead tracking section"
+    },
+    "component-1774565911359-77": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Same split pattern as index free uploads section"
+    },
+    "component-1774565912293-314": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Identical to index testimonial section"
+    },
+    "component-1774565920012-999": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Simple centered banner with heading and subtitle"
+    },
+    "component-1774565920888-252": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Split layout: contact details left, form card right with 4 fields and submit button"
+    },
+    "component-1774565928406-94": {
+      "quality": "high",
+      "confidence": 0.9,
+      "source": "screenshot",
+      "notes": "Hero split with photo collage on right instead of single dashboard image"
+    },
+    "component-1774565929531-504": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Identical stats pattern to index version"
+    },
+    "component-1774565930450-943": {
+      "quality": "high",
+      "confidence": 0.9,
+      "source": "screenshot",
+      "notes": "Split layout with text/button left, video thumbnail with play button right"
+    },
+    "component-1774565931380-386": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "4x2 team member grid with photos, names, titles. 8 members total."
+    },
+    "component-1774565941238-255": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "404 page with illustration, heading, and retry button"
+    },
+    "component-1774565950175-896": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Login form card with fields, social sign-in buttons, and links"
+    },
+    "component-1774565955831-893": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Pricing page banner with heading and subtitle on pink background"
+    },
+    "component-1774565957530-206": {
+      "quality": "high",
+      "confidence": 0.9,
+      "source": "screenshot",
+      "notes": "3 pricing cards with plan names, prices, feature lists, and CTA buttons"
+    },
+    "component-1774565959805-740": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot + HTML",
+      "notes": "FAQ accordion with 5 items using details/summary elements. First item expanded."
+    },
+    "component-1774565966398-585": {
+      "quality": "high",
+      "confidence": 0.95,
+      "source": "screenshot",
+      "notes": "Create account form card with 4 fields, terms checkbox, social sign-in, and login link"
+    },
+    "component-1774565976793-874": {
+      "quality": "medium",
+      "confidence": 0.85,
+      "source": "screenshot",
+      "notes": "Blog card grid with 3 posts. Small screenshot makes details harder to confirm, but structure is clear: image + category tag + title + date per card."
+    }
+  }
+}

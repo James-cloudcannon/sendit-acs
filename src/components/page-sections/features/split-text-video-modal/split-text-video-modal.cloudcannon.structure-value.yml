@@ -1,0 +1,35 @@
+label: Split Text Video Modal
+icon: play_circle
+description: Split layout with text content on the left and a video player on the right.
+value:
+  _component: page-sections/features/split-text-video-modal
+  heading: "We love what we do"
+  description: ""
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: Follow on LinkedIn
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: tertiary
+      size: md
+  thumbnail:
+    source: ""
+    alt: ""
+  video_type: vimeo
+  video_id: ""
+  video_title: ""
+  colorScheme: inherit
+  backgroundColor: none
+preview:
+  text:
+    - Split Text Video Modal
+  subtext:
+    - key: heading
+  icon: play_circle
+picker_preview:
+  text: Split Text Video Modal
+  subtext: Split layout with text content and video player.
+_inputs_from_glob:
+  - /src/components/page-sections/features/split-text-video-modal/split-text-video-modal.cloudcannon.inputs.yml

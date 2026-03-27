@@ -1,0 +1,176 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+import Image from "@core-elements/image/Image.astro";
+
+const {
+  heading = "Beautiful web campaigns",
+  description = "",
+  buttonSections = [],
+  images = [],
+  image_alt = "",
+
+  colorScheme = "inherit",
+  backgroundColor = "accent",
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+
+const singleImage = images.length === 1;
+---
+
+<CustomSection
+  class:list={["hero-split-large", className]}
+  maxContentWidth="none"
+  paddingHorizontal="none"
+  paddingVertical="none"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <div class="hero-split-large__inner">
+    <div class="hero-split-large__content">
+      <Heading level="h1" size="3xl" text={heading} data-prop="heading" />
+      <SimpleText text={description} size="lg" data-prop="description" />
+      <ButtonGroup
+        alignX="start"
+        buttonSections={buttonSections}
+        data-children-prop="buttonSections"
+      />
+    </div>
+    <div class:list={["hero-split-large__media", singleImage && "hero-split-large__media--single"]}>
+      {images.map((img, i) => (
+        <div class={`hero-split-large__image-wrap hero-split-large__image-wrap--${i}`}>
+          <Image
+            source={img.source}
+            alt={img.alt || image_alt}
+            rounded={true}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .hero-split-large {
+      min-height: 100vh;
+      overflow: hidden;
+
+      > .outer-content {
+        min-height: 100vh;
+
+        > .content {
+          max-width: none;
+          padding: 0;
+        }
+      }
+    }
+
+    .hero-split-large__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      min-height: 100vh;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-xl);
+      gap: var(--spacing-2xl);
+    }
+
+    .hero-split-large__content {
+      padding: var(--spacing-4xl) 0;
+    }
+
+    .hero-split-large__content .heading {
+      margin-top: 0;
+    }
+
+    .hero-split-large__media {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .hero-split-large__media--single {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: calc(-1 * var(--spacing-xl));
+    }
+
+    .hero-split-large__media--single .hero-split-large__image-wrap {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .hero-split-large__media--single .image-inner {
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-split-large__media:not(.hero-split-large__media--single) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: var(--spacing-md);
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-split-large__media:not(.hero-split-large__media--single) .hero-split-large__image-wrap--0 {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      align-self: end;
+      transform: rotate(-3deg);
+    }
+
+    .hero-split-large__media:not(.hero-split-large__media--single) .hero-split-large__image-wrap--1 {
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
+      align-self: center;
+      transform: rotate(2deg);
+      z-index: 2;
+    }
+
+    .hero-split-large__media:not(.hero-split-large__media--single) .hero-split-large__image-wrap--2 {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      align-self: start;
+      transform: rotate(1deg);
+    }
+
+    .hero-split-large__media:not(.hero-split-large__media--single) .image-inner {
+      box-shadow: 0 10px 20px -5px rgb(0 0 0 / 0.15);
+      border-radius: var(--radius-md);
+    }
+
+    @media (max-width: 768px) {
+      .hero-split-large__inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: var(--spacing-2xl) var(--spacing-lg);
+      }
+
+      .hero-split-large {
+        min-height: auto;
+
+        > .outer-content {
+          min-height: auto;
+        }
+      }
+
+      .hero-split-large__media {
+        min-height: 300px;
+      }
+
+      .hero-split-large__media--single {
+        margin-right: 0;
+      }
+    }
+  }
+</style>

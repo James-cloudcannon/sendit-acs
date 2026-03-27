@@ -1,8 +1,7 @@
 {
-  "name": "Astro Component Starter",
-  "url": "https://example.com",
-  "description": "",
+  "name": "Sendit",
+  "url": "https://top-quail.cloudvent.net/",
+  "description": "A polished, marketing website template built with Astro",
   "logoSource": "/images/logo.svg",
-  "titleFormat": "{title} | Astro Component Starter",
-  "twitterHandle": "@yourusername"
+  "titleFormat": "{title} | Sendit"
 }

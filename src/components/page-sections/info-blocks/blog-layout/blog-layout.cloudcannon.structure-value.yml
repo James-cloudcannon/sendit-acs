@@ -1,0 +1,82 @@
+label: Blog Layout
+icon: article
+description: Blog post card grid with images, category tags, titles, and dates.
+value:
+  _component: page-sections/info-blocks/blog-layout
+  posts:
+    - title: "Blog Post Title"
+      category: "Marketing"
+      date: "14 June 2025"
+      image:
+        source: ""
+        alt: ""
+      url: ""
+    - title: "Another Blog Post"
+      category: "Blog"
+      date: "10 June 2025"
+      image:
+        source: ""
+        alt: ""
+      url: ""
+    - title: "Third Blog Post"
+      category: "Marketing"
+      date: "8 June 2025"
+      image:
+        source: ""
+        alt: ""
+      url: ""
+  colorScheme: inherit
+  backgroundColor: base
+preview:
+  text:
+    - Blog Layout
+  subtext:
+    - key: posts
+      value_key: title
+  icon: article
+picker_preview:
+  text: Blog Layout
+  subtext: Blog post card grid with images, category tags, titles, and dates.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/blog-layout/blog-layout.cloudcannon.inputs.yml
+_structures:
+  postItem:
+    values:
+      - label: Post
+        value:
+          title: ""
+          category: ""
+          date: ""
+          image:
+            source: ""
+            alt: ""
+          url: ""
+        preview:
+          text:
+            - key: title
+          subtext:
+            - key: category
+          image:
+            - key: image.source
+        _inputs:
+          title:
+            type: text
+            comment: Blog post title.
+          category:
+            type: text
+            comment: Category tag displayed on the card (e.g., "Marketing").
+          date:
+            type: text
+            comment: Publication date text.
+          image:
+            type: object
+            comment: Featured image for the card background.
+          image.source:
+            type: image
+            comment: Image file path.
+          image.alt:
+            type: text
+            comment: Alt text for the image.
+          url:
+            type: url
+            comment: Link URL when the card is clicked.

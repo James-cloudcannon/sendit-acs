@@ -1,0 +1,2544 @@
+{
+  "style_system": {
+    "spacing": {
+      "none": "0",
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem",
+      "4xl": "5rem",
+      "5xl": "6rem",
+      "6xl": "7rem"
+    },
+    "spacing_em": {
+      "xs": "0.25em",
+      "sm": "0.5em",
+      "md": "1em",
+      "lg": "1.5em",
+      "xl": "2em",
+      "2xl": "3em",
+      "3xl": "4em",
+      "4xl": "5em",
+      "5xl": "6em",
+      "6xl": "7em"
+    },
+    "content_widths": {
+      "xs": "350px",
+      "sm": "480px",
+      "md": "640px",
+      "lg": "768px",
+      "xl": "1024px",
+      "2xl": "1280px",
+      "3xl": "1536px"
+    },
+    "heading_sizes": {
+      "xs": { "desktop": "1.125rem", "mobile": "1rem" },
+      "sm": { "desktop": "1.375rem", "mobile": "1.25rem" },
+      "md": { "desktop": "1.75rem", "mobile": "1.5rem" },
+      "lg": { "desktop": "2.25rem", "mobile": "1.875rem" },
+      "xl": { "desktop": "2.875rem", "mobile": "2.375rem" },
+      "2xl": { "desktop": "3.75rem", "mobile": "3rem" },
+      "3xl": { "desktop": "4.625rem", "mobile": "3.75rem" },
+      "4xl": { "desktop": "5.5rem", "mobile": "4.25rem" }
+    },
+    "body_sizes": {
+      "xs": { "desktop": "0.75rem", "mobile": "0.625rem" },
+      "sm": { "desktop": "0.875rem", "mobile": "0.75rem" },
+      "md": { "desktop": "1rem", "mobile": "0.875rem" },
+      "lg": { "desktop": "1.125rem", "mobile": "1rem" },
+      "xl": { "desktop": "1.375rem", "mobile": "1.125rem" },
+      "2xl": { "desktop": "1.625rem", "mobile": "1.375rem" },
+      "3xl": { "desktop": "1.875rem", "mobile": "1.625rem" },
+      "4xl": { "desktop": "2.25rem", "mobile": "1.875rem" }
+    },
+    "radius": {
+      "none": "0",
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "3xl": "48px",
+      "4xl": "64px",
+      "full": "9999px"
+    },
+    "layers": {
+      "auto": "auto",
+      "0": 0,
+      "1": 10,
+      "2": 20,
+      "3": 30,
+      "4": 40,
+      "5": 50,
+      "6": 60,
+      "7": 100,
+      "8": 1000
+    },
+    "animations": {
+      "fast": "100ms",
+      "normal": "200ms",
+      "slow": "500ms"
+    },
+    "aspect_ratios": {
+      "square": "1 / 1",
+      "landscape": "4 / 3",
+      "portrait": "3 / 4",
+      "widescreen": "16 / 9",
+      "horizontal-strip": "16 / 5"
+    },
+    "colors": {
+      "grays": {
+        "--gray-0": "#fff",
+        "--gray-1": "#eaeaea",
+        "--gray-2": "#d4d4d4",
+        "--gray-3": "#bfbfbf",
+        "--gray-4": "#aaa",
+        "--gray-5": "#949494",
+        "--gray-6": "#7f7f7f",
+        "--gray-7": "#6a6a6a",
+        "--gray-8": "#555",
+        "--gray-9": "#404040",
+        "--gray-10": "#2a2a2a",
+        "--gray-11": "#151515",
+        "--gray-12": "#000"
+      },
+      "semantic_pairs": {
+        "blue": { "light": "#e8f4fd", "dark": "#3b82f6" },
+        "green": { "light": "#e8fce9", "dark": "#10b981" },
+        "yellow": { "light": "#fef9e7", "dark": "#fbbf24" },
+        "orange": { "light": "#fef3e7", "dark": "#f97316" },
+        "red": { "light": "#fee8e8", "dark": "#ef4444" },
+        "purple": { "light": "#f3e8ff", "dark": "#a855f7" },
+        "pink": { "light": "#fde8f2", "dark": "#ec4899" },
+        "cyan": { "light": "#e8fffe", "dark": "#06b6d4" }
+      }
+    },
+    "background_colors": {
+      "base": "--color-bg",
+      "surface": "--color-bg-surface",
+      "accent": "--color-bg-accent",
+      "highlight": "--color-bg-highlight"
+    },
+    "typography": {
+      "body_font": "-apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Helvetica Neue', sans-serif",
+      "heading_font": "var(--font-body) (same as body by default)",
+      "mono_font": "menlo, consolas, monaco, adwaita mono, liberation mono, lucida console, monospace",
+      "font_weight_normal": "400",
+      "font_weight_semibold": "600",
+      "font_weight_bold": "700"
+    },
+    "mobile_breakpoint": "640px",
+    "notes": "All building blocks use margin-top: var(--spacing-lg) = 1.5rem as default vertical spacing. First child inside containers has margin-top: 0 !important. Mobile responsive font sizes kick in below 640px."
+  },
+
+  "components": {
+    "Heading": {
+      "import": "@core-elements/heading/Heading.astro",
+      "source_path": "src/components/building-blocks/core-elements/heading/Heading.astro",
+      "category": "core-elements",
+      "purpose": "Renders a heading element (h1-h6) with inline markdown support, optional icon, size tokens, and text alignment.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": null, "description": "Heading text content, supports inline markdown" },
+        { "name": "level", "type": "string", "default": "h2", "description": "HTML heading level: h1, h2, h3, h4, h5, h6" },
+        { "name": "size", "type": "string", "default": null, "description": "Visual size token: xs, sm, md, lg, xl, 2xl, 3xl, 4xl" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Text alignment: start, center, end" },
+        { "name": "iconName", "type": "string", "default": null, "description": "Name of icon to display alongside heading" },
+        { "name": "iconPosition", "type": "string", "default": "before", "description": "Icon placement: before or after text" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "size": {
+          "xs": "font-size: var(--font-size-heading-xs) = 1.125rem / 1rem mobile",
+          "sm": "font-size: var(--font-size-heading-sm) = 1.375rem / 1.25rem mobile",
+          "md": "font-size: var(--font-size-heading-md) = 1.75rem / 1.5rem mobile",
+          "lg": "font-size: var(--font-size-heading-lg) = 2.25rem / 1.875rem mobile",
+          "xl": "font-size: var(--font-size-heading-xl) = 2.875rem / 2.375rem mobile",
+          "2xl": "font-size: var(--font-size-heading-2xl) = 3.75rem / 3rem mobile",
+          "3xl": "font-size: var(--font-size-heading-3xl) = 4.625rem / 3.75rem mobile",
+          "4xl": "font-size: var(--font-size-heading-4xl) = 5.5rem / 4.25rem mobile"
+        },
+        "alignX": {
+          "start": "text-align: start",
+          "center": "text-align: center",
+          "end": "text-align: end"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative content instead of text prop"
+      ],
+
+      "dom_structure": [
+        "<h2.heading>  (Tag = level prop)",
+        "  <span.heading-inner.size-{size}.align-{alignX}>",
+        "    <Icon.heading-icon />  (if iconPosition='before')",
+        "    <span.heading-text [data-editable] [data-prop]>",
+        "      {markdown-rendered text}",
+        "    </span>",
+        "    <Icon.heading-icon.heading-icon-after />  (if iconPosition='after')",
+        "  </span>",
+        "</h2>"
+      ],
+
+      "css_selectors": {
+        ".heading": "outer element (h1-h6 tag), has margin-top: var(--spacing-lg)",
+        ".heading-inner": "inner span controlling font-size and alignment",
+        ".heading-inner.size-{xs|sm|md|lg|xl|2xl|3xl|4xl}": "font-size variant",
+        ".heading-inner.align-{start|center|end}": "text alignment variant",
+        ".heading-text": "span wrapping the actual text content",
+        ".heading-icon": "icon element before text",
+        ".heading-icon-after": "icon element after text"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "display": "block (heading-inner)",
+        "font-size": "inherits from parent unless size prop set"
+      },
+
+      "gaps": [
+        "No color prop for heading text color",
+        "No font-weight prop (inherits from parent/theme)"
+      ],
+
+      "visual_behavior": "Renders a semantic heading element with the tag from 'level' prop. Visual size is decoupled from semantic level via the 'size' prop. Text is inline-markdown rendered. Renders nothing if text is empty and no slot content (unless _component flag set)."
+    },
+
+    "Text": {
+      "import": "@core-elements/text/Text.astro",
+      "source_path": "src/components/building-blocks/core-elements/text/Text.astro",
+      "category": "core-elements",
+      "purpose": "Renders block-level markdown text (paragraphs, lists, etc.) with text alignment.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": "", "description": "Markdown content rendered as block-level HTML (paragraphs, lists, etc.)" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Text alignment: start, center, end" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "alignX": {
+          "start": "text-align: start",
+          "center": "text-align: center",
+          "end": "text-align: end"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative content instead of text prop"
+      ],
+
+      "dom_structure": [
+        "<div.text>",
+        "  <div.text-inner.align-{alignX} [data-editable] [data-prop]>",
+        "    {block-level markdown content: <p>, <ul>, <ol>, etc.}",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".text": "outer div wrapper, has margin-top",
+        ".text-inner": "inner div with alignment",
+        ".text-inner.align-{start|center|end}": "text alignment variant"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem"
+      },
+
+      "gaps": [
+        "No size prop (font-size inherits from parent)",
+        "No color prop"
+      ],
+
+      "visual_behavior": "Renders markdown as full block-level HTML (paragraphs get <p> tags, lists get <ul>/<ol>). Unlike SimpleText which renders inline. Renders nothing if text is empty and no slot."
+    },
+
+    "SimpleText": {
+      "import": "@core-elements/simple-text/SimpleText.astro",
+      "source_path": "src/components/building-blocks/core-elements/simple-text/SimpleText.astro",
+      "category": "core-elements",
+      "purpose": "Renders inline markdown text in a <p> element with configurable font size and alignment.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": null, "description": "Inline markdown text content" },
+        { "name": "size", "type": "string", "default": "md", "description": "Font size token: xs, sm, md, lg, xl, 2xl, 3xl, 4xl" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Text alignment: start, center, end" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "size": {
+          "xs": "font-size: var(--font-size-xs) = 0.75rem / 0.625rem mobile",
+          "sm": "font-size: var(--font-size-sm) = 0.875rem / 0.75rem mobile",
+          "md": "font-size: var(--font-size-md) = 1rem / 0.875rem mobile",
+          "lg": "font-size: var(--font-size-lg) = 1.125rem / 1rem mobile",
+          "xl": "font-size: var(--font-size-xl) = 1.375rem / 1.125rem mobile",
+          "2xl": "font-size: var(--font-size-2xl) = 1.625rem / 1.375rem mobile",
+          "3xl": "font-size: var(--font-size-3xl) = 1.875rem / 1.625rem mobile",
+          "4xl": "font-size: var(--font-size-4xl) = 2.25rem / 1.875rem mobile"
+        },
+        "alignX": {
+          "start": "text-align: start",
+          "center": "text-align: center",
+          "end": "text-align: end"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative content instead of text prop"
+      ],
+
+      "dom_structure": [
+        "<div.simple-text>",
+        "  <p.simple-text-content.size-{size}.align-{alignX}>",
+        "    <span.simple-text-inner [data-editable] [data-prop]>",
+        "      {inline markdown text}",
+        "    </span>",
+        "  </p>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".simple-text": "outer wrapper, has margin-top",
+        ".simple-text-content": "the <p> element with size and alignment classes",
+        ".simple-text-content.size-{xs|sm|md|lg|xl|2xl|3xl|4xl}": "font-size variant",
+        ".simple-text-content.align-{start|center|end}": "text alignment variant",
+        ".simple-text-inner": "inner span wrapping actual text"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "font-size": "var(--font-size-md) = 1rem (default size=md)"
+      },
+
+      "gaps": [
+        "No color prop"
+      ],
+
+      "visual_behavior": "Renders inline markdown in a single <p> element. Uses body font sizes (--font-size-*), not heading sizes. Newlines in text are converted to <br>. Good for subtitles and short descriptive text."
+    },
+
+    "Button": {
+      "import": "@core-elements/button/Button.astro",
+      "source_path": "src/components/building-blocks/core-elements/button/Button.astro",
+      "category": "core-elements",
+      "purpose": "Renders a styled button or link with icon support, multiple visual variants, and size options.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": null, "description": "Button label text" },
+        { "name": "iconName", "type": "string", "default": null, "description": "Icon name to display in button" },
+        { "name": "iconPosition", "type": "string", "default": "before", "description": "Icon placement: before or after text" },
+        { "name": "hideText", "type": "boolean", "default": false, "description": "Show icon only, hide text (adds aria-label)" },
+        { "name": "variant", "type": "string", "default": "primary", "description": "Visual style: primary, secondary, tertiary, ghost, text" },
+        { "name": "size", "type": "string", "default": "md", "description": "Button size: sm, md, lg" },
+        { "name": "link", "type": "string", "default": null, "description": "URL for anchor element (only when element='a')" },
+        { "name": "element", "type": "string", "default": "a", "description": "HTML element to render: a or button" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "variant": {
+          "primary": "bg: var(--color-bg-brand), color: var(--color-text-on-brand), border: transparent",
+          "secondary": "bg: var(--color-bg-muted), color: var(--color-text-strong), border: transparent",
+          "tertiary": "bg: transparent, color: var(--color-text-strong), border: var(--color-border-strong)",
+          "ghost": "bg: transparent, color: var(--color-text-strong), border: transparent",
+          "text": "bg: transparent, color: var(--color-brand), border: transparent, padding: 0, font-size: var(--font-size-lg)"
+        },
+        "size": {
+          "sm": "font-size: var(--font-size-xs) = 0.75rem",
+          "md": "font-size: var(--font-size-md) = 1rem",
+          "lg": "font-size: var(--font-size-xl) = 1.375rem"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative content instead of text prop (inside the label-text span)"
+      ],
+
+      "dom_structure": [
+        "<span.button>  (display: contents)",
+        "  <a|button.button-inner.variant-{variant}.size-{size} [.icon-after] [.icon-only]>",
+        "    <Icon />  (if iconName provided)",
+        "    <span.label-text [data-editable] [data-prop]>",
+        "      {text}",
+        "    </span>",
+        "  </a|button>",
+        "</span>"
+      ],
+
+      "css_selectors": {
+        ".button": "outer span with display: contents (invisible wrapper)",
+        ".button-inner": "the actual clickable element (a or button)",
+        ".button-inner.variant-primary": "brand-colored filled button",
+        ".button-inner.variant-secondary": "muted background button",
+        ".button-inner.variant-tertiary": "outlined button with strong border",
+        ".button-inner.variant-ghost": "transparent button, hover shows background",
+        ".button-inner.variant-text": "text-only link style, no padding",
+        ".button-inner.size-{sm|md|lg}": "font-size variant",
+        ".button-inner.icon-after": "flex-direction: row-reverse",
+        ".button-inner.icon-only": "padding: var(--spacing-em-xs)",
+        ".label-text": "the text span inside the button"
+      },
+
+      "default_styles": {
+        "display": "inline-flex",
+        "align-items": "center",
+        "justify-content": "center",
+        "border-radius": "var(--radius-xs) = 4px",
+        "font-weight": "var(--font-weight-semibold) = 600",
+        "padding-block": "var(--spacing-em-sm) = 0.5em",
+        "padding-inline": "var(--spacing-em-sm) = 0.5em",
+        "gap": "0.15em",
+        "transition": "background-color, color, border-color 200ms ease-in-out"
+      },
+
+      "gaps": [
+        "No full-width / block-level option",
+        "No disabled styling for anchor elements"
+      ],
+
+      "gotchas": [
+        "Outer .button span uses display: contents, so it is invisible in the DOM layout",
+        "The 'text' variant has padding: 0 and a larger font-size override"
+      ],
+
+      "visual_behavior": "Renders an inline-flex button with rounded corners. Primary variant is brand-colored. The outer span is display:contents, so the actual visual element is .button-inner. Hover adds background/border transitions. Icon-only mode reduces padding."
+    },
+
+    "Image": {
+      "import": "@core-elements/image/Image.astro",
+      "source_path": "src/components/building-blocks/core-elements/image/Image.astro",
+      "category": "core-elements",
+      "purpose": "Renders an optimized responsive image with aspect ratio control, positioning, rounded corners, and background mode.",
+
+      "props": [
+        { "name": "source", "type": "string", "default": null, "description": "Image URL or local path (starting with /src/ for optimization)" },
+        { "name": "alt", "type": "string", "default": "''", "description": "Alt text for the image" },
+        { "name": "sizes", "type": "string", "default": "(max-width: 1280px) 100vw, 1280px", "description": "Responsive sizes attribute" },
+        { "name": "widths", "type": "array", "default": "[640, 1280, 2560]", "description": "Widths for responsive image generation" },
+        { "name": "rounded", "type": "boolean", "default": false, "description": "Apply border-radius: var(--radius-lg) = 16px" },
+        { "name": "priority", "type": "boolean", "default": false, "description": "Eager loading, sync decoding, high fetchpriority" },
+        { "name": "aspectRatio", "type": "string", "default": null, "description": "Aspect ratio: square, landscape, portrait, widescreen, horizontal-strip" },
+        { "name": "width", "type": "number", "default": null, "description": "Explicit width" },
+        { "name": "height", "type": "number", "default": null, "description": "Explicit height" },
+        { "name": "positionVertical", "type": "string", "default": "center", "description": "Vertical object-position: top, center, bottom" },
+        { "name": "positionHorizontal", "type": "string", "default": "center", "description": "Horizontal object-position: left, center, right" },
+        { "name": "background", "type": "boolean", "default": false, "description": "Background mode: absolute positioned, fills parent, object-fit: cover" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "aspectRatio": {
+          "square": "aspect-ratio: 1 / 1",
+          "landscape": "aspect-ratio: 4 / 3",
+          "portrait": "aspect-ratio: 3 / 4",
+          "widescreen": "aspect-ratio: 16 / 9",
+          "horizontal-strip": "aspect-ratio: 16 / 5"
+        },
+        "position": {
+          "top-left": "object-position: left top",
+          "top-center": "object-position: center top",
+          "top-right": "object-position: right top",
+          "center-left": "object-position: left center",
+          "center-center": "object-position: center center",
+          "center-right": "object-position: right center",
+          "bottom-left": "object-position: left bottom",
+          "bottom-center": "object-position: center bottom",
+          "bottom-right": "object-position: right bottom"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<div.image>",
+        "  <div.image-inner[.ratio][.ratio-{aspectRatio}][.position-{v}-{h}][.rounded][.background]>",
+        "    <Picture|picture>  (Astro optimized or plain HTML)",
+        "      <img [data-editable] [data-prop-src] [data-prop-alt] />",
+        "    </Picture|picture>",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".image": "outer wrapper, display: block, margin-top, overflow: hidden",
+        ".image-inner": "inner wrapper controlling aspect ratio and position",
+        ".image-inner.ratio": "enables aspect-ratio and object-fit: cover on img",
+        ".image-inner.ratio-{square|landscape|portrait|widescreen|horizontal-strip}": "specific aspect ratio",
+        ".image-inner.rounded": "border-radius: var(--radius-lg) = 16px",
+        ".image-inner.background": "fills parent (height: 100%, width: 100%), img gets object-fit: cover",
+        ".image-inner.position-{v}-{h}": "object-position on the img"
+      },
+
+      "default_styles": {
+        "display": "block",
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "overflow": "hidden",
+        "img width": "100%",
+        "img height": "auto"
+      },
+
+      "gaps": [
+        "No overlay/tint support built in",
+        "No border prop"
+      ],
+
+      "gotchas": [
+        "When background=true, the .image div becomes position: absolute with inset: 0 and margin-top: 0",
+        "Local images starting with /src/ use Astro's Picture component for optimization; external URLs get plain <img>"
+      ],
+
+      "visual_behavior": "Renders a responsive image that fills its container width. When aspectRatio is set, the image is cropped with object-fit: cover. Background mode makes it an absolute-positioned fill image for use behind content. Local images get WebP optimization via Astro."
+    },
+
+    "Icon": {
+      "import": "@core-elements/icon/Icon.astro",
+      "source_path": "src/components/building-blocks/core-elements/icon/Icon.astro",
+      "category": "core-elements",
+      "purpose": "Renders an SVG icon from astro-icon with configurable size, color, background, and alignment.",
+
+      "props": [
+        { "name": "name", "type": "string", "default": null, "description": "Icon name (from src/icons directory)" },
+        { "name": "size", "type": "string", "default": "lg", "description": "Icon size: sm, md, lg, xl, 2xl, 3xl, 4xl, none" },
+        { "name": "color", "type": "string", "default": "default", "description": "Icon color: default, blue, green, yellow, orange, red, purple, pink, cyan" },
+        { "name": "background", "type": "boolean", "default": false, "description": "Show colored background behind icon" },
+        { "name": "alignX", "type": "string", "default": "''", "description": "Horizontal alignment: start, center, end" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "size": {
+          "sm": "font-size: var(--font-size-sm) = 0.875rem",
+          "md": "font-size: var(--font-size-xl) = 1.375rem",
+          "lg": "font-size: var(--font-size-2xl) = 1.625rem",
+          "xl": "font-size: var(--font-size-3xl) = 1.875rem",
+          "2xl": "font-size: var(--font-size-4xl) = 2.25rem",
+          "3xl": "font-size: var(--font-size-4xl) = 2.25rem (same as 2xl)",
+          "4xl": "font-size: var(--font-size-4xl) = 2.25rem (same as 2xl)",
+          "none": "no font-size set, inherits"
+        },
+        "color": {
+          "default": "color: inherit",
+          "blue": "color: var(--blue-dark) = #3b82f6, bg: var(--blue-light)",
+          "green": "color: var(--green-dark) = #10b981, bg: var(--green-light)",
+          "yellow": "color: var(--yellow-dark) = #fbbf24, bg: var(--yellow-light)",
+          "orange": "color: var(--orange-dark) = #f97316, bg: var(--orange-light)",
+          "red": "color: var(--red-dark) = #ef4444, bg: var(--red-light)",
+          "purple": "color: var(--purple-dark) = #a855f7, bg: var(--purple-light)",
+          "pink": "color: var(--pink-dark) = #ec4899, bg: var(--pink-light)",
+          "cyan": "color: var(--cyan-dark) = #06b6d4, bg: var(--cyan-light)"
+        },
+        "alignX": {
+          "start": "display: block, width: fit-content",
+          "center": "display: block, margin-inline: auto, width: fit-content",
+          "end": "display: block, margin-inline-start: auto, width: fit-content"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<div.icon>",
+        "  <span.icon-inner.size-{size}.color-{color}[.background][.align-{alignX}][.fill]>",
+        "    <svg />  (astro-icon inline SVG)",
+        "  </span>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".icon": "outer wrapper, display: block, line-height: 0",
+        ".icon-inner": "inner span with size and color classes",
+        ".icon-inner.size-{sm|md|lg|xl|2xl|3xl|4xl}": "font-size variant",
+        ".icon-inner.color-{name}": "color variant",
+        ".icon-inner.background": "adds bg-color: var(--color-bg-surface), padding: var(--spacing-em-xs)",
+        ".icon-inner.fill": "fill: currentcolor (auto-added for social/ icons)"
+      },
+
+      "default_styles": {
+        "display": "block",
+        "line-height": "0",
+        "border-radius": "var(--radius-xs) = 4px",
+        "color": "inherit"
+      },
+
+      "gaps": [
+        "Sizes 3xl and 4xl map to the same value as 2xl (--font-size-4xl)"
+      ],
+
+      "gotchas": [
+        "Icons in the 'social/' subdirectory automatically get fill: currentcolor via the .fill class",
+        "size='none' means no font-size set, icon inherits parent size (used when embedded in Heading/Button)"
+      ],
+
+      "visual_behavior": "Renders an inline SVG icon. Default size is 'lg' (1.625rem). When background=true, gets a light background with padding. When color is set, both icon color and background color change to a matching semantic pair."
+    },
+
+    "Divider": {
+      "import": "@core-elements/divider/Divider.astro",
+      "source_path": "src/components/building-blocks/core-elements/divider/Divider.astro",
+      "category": "core-elements",
+      "purpose": "Renders a horizontal rule with configurable vertical padding.",
+
+      "props": [
+        { "name": "paddingVertical", "type": "string", "default": "md", "description": "Vertical padding around the rule: none, xs, sm, md, lg, xl, 2xl, 3xl" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "paddingVertical": {
+          "none": "padding: 0",
+          "xs": "padding-block: var(--spacing-xs) = 0.25rem",
+          "sm": "padding-block: var(--spacing-sm) = 0.5rem",
+          "md": "padding-block: var(--spacing-md) = 1rem",
+          "lg": "padding-block: var(--spacing-lg) = 1.5rem",
+          "xl": "padding-block: var(--spacing-xl) = 2rem",
+          "2xl": "padding-block: var(--spacing-2xl) = 3rem",
+          "3xl": "padding-block: var(--spacing-3xl) = 4rem"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<div.divider aria-hidden='true'>",
+        "  <div.divider-inner.padding-y-{paddingVertical}>",
+        "    <hr.rule />",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".divider": "outer wrapper",
+        ".divider-inner": "padding container",
+        ".divider-inner.padding-y-{size}": "vertical padding variant",
+        ".rule": "the actual <hr>, border-top: 2px solid var(--color-border-subtle)"
+      },
+
+      "default_styles": {
+        "border": "0",
+        "border-top": "2px solid var(--color-border-subtle)",
+        "margin": "0"
+      },
+
+      "gaps": [
+        "No color prop for the rule line",
+        "No width/thickness prop"
+      ],
+
+      "visual_behavior": "Renders a subtle horizontal line with configurable vertical spacing. Always aria-hidden. Uses border-subtle color."
+    },
+
+    "Spacer": {
+      "import": "@core-elements/spacer/Spacer.astro",
+      "source_path": "src/components/building-blocks/core-elements/spacer/Spacer.astro",
+      "category": "core-elements",
+      "purpose": "Renders an invisible spacer div with configurable height for adding vertical space.",
+
+      "props": [
+        { "name": "size", "type": "string", "default": "md", "description": "Spacer height: xs, sm, md, lg, xl, 2xl, 3xl" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "size": {
+          "xs": "height: var(--spacing-xs) = 0.25rem",
+          "sm": "height: var(--spacing-sm) = 0.5rem",
+          "md": "height: var(--spacing-md) = 1rem",
+          "lg": "height: var(--spacing-lg) = 1.5rem",
+          "xl": "height: var(--spacing-xl) = 2rem",
+          "2xl": "height: var(--spacing-2xl) = 3rem",
+          "3xl": "height: var(--spacing-3xl) = 4rem"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<div.spacer aria-hidden='true'>",
+        "  <div.spacer-inner.size-{size} />",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".spacer": "outer wrapper",
+        ".spacer-inner": "the element with height",
+        ".spacer-inner.size-{xs|sm|md|lg|xl|2xl|3xl}": "height variant"
+      },
+
+      "default_styles": {
+        "height": "var(--spacing-md) = 1rem (default)"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "An invisible block that adds vertical space. Always aria-hidden. Default height is 1rem."
+    },
+
+    "Video": {
+      "import": "@core-elements/video/Video.astro",
+      "source_path": "src/components/building-blocks/core-elements/video/Video.astro",
+      "category": "core-elements",
+      "purpose": "Renders a video player supporting YouTube (lite-youtube), Vimeo (lite-vimeo), or self-hosted HTML5 video.",
+
+      "props": [
+        { "name": "type", "type": "string", "default": null, "description": "Video type: youtube, vimeo, or omit for self-hosted" },
+        { "name": "id", "type": "string", "default": null, "description": "YouTube or Vimeo video ID" },
+        { "name": "title", "type": "string", "default": null, "description": "Video title for accessibility" },
+        { "name": "source", "type": "string", "default": null, "description": "Source URL for self-hosted video" },
+        { "name": "thumbnail", "type": "string", "default": null, "description": "Poster/thumbnail for self-hosted video" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [],
+
+      "dom_structure": [
+        "YouTube: <lite-youtube.video videoid={id} videotitle={title} />",
+        "Vimeo:   <lite-vimeo.video videoid={id} videotitle={title} />",
+        "Self:    <video.video controls poster={thumbnail}><source src={source} type='video/mp4' /></video>"
+      ],
+
+      "css_selectors": {
+        ".video": "the video element, display: block, margin-top"
+      },
+
+      "default_styles": {
+        "display": "block",
+        "margin-top": "var(--spacing-lg) = 1.5rem"
+      },
+
+      "gaps": [
+        "No aspect ratio prop",
+        "No autoplay/mute controls for self-hosted"
+      ],
+
+      "visual_behavior": "Renders a lazy-loaded video player. YouTube and Vimeo use lite-element web components for performance. Self-hosted uses native <video> with controls."
+    },
+
+    "Embed": {
+      "import": "@core-elements/embed/Embed.astro",
+      "source_path": "src/components/building-blocks/core-elements/embed/Embed.astro",
+      "category": "core-elements",
+      "purpose": "Renders raw HTML content (typically an iframe) with aspect ratio control.",
+
+      "props": [
+        { "name": "html", "type": "string", "default": null, "description": "Raw HTML to embed (iframe, etc.)" },
+        { "name": "aspectRatio", "type": "string", "default": "landscape", "description": "Aspect ratio: square, landscape, portrait, widescreen" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "aspectRatio": {
+          "square": "aspect-ratio: 1 / 1",
+          "landscape": "aspect-ratio: 4 / 3",
+          "portrait": "aspect-ratio: 3 / 4",
+          "widescreen": "aspect-ratio: 16 / 9"
+        }
+      },
+
+      "slots": [
+        "Default: HTML content to embed (alternative to html prop)"
+      ],
+
+      "dom_structure": [
+        "<div.embed-wrapper>",
+        "  <div.embed-content.ratio-{aspectRatio} set:html={content}>",
+        "    {raw HTML}",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".embed-wrapper": "outer wrapper, margin-top",
+        ".embed-content": "inner wrapper with aspect ratio",
+        ".embed-content.ratio-{name}": "aspect ratio variant",
+        ".embed-content > iframe": "iframe inside gets width/height: 100%, border: none"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Renders raw HTML (usually an iframe) inside a container with controlled aspect ratio. The iframe fills the container. Default aspect ratio is landscape (4:3)."
+    },
+
+    "Counter": {
+      "import": "@core-elements/counter/Counter.astro",
+      "source_path": "src/components/building-blocks/core-elements/counter/Counter.astro",
+      "category": "core-elements",
+      "purpose": "Renders an animated number counter that counts up when scrolled into view, with optional prefix/suffix.",
+
+      "props": [
+        { "name": "number", "type": "number", "default": 0, "description": "Target number to count to" },
+        { "name": "prefix", "type": "string", "default": null, "description": "Text before the number (e.g. '$')" },
+        { "name": "suffix", "type": "string", "default": null, "description": "Text after the number (e.g. '%', '+')" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Horizontal alignment: start, center, end" },
+        { "name": "size", "type": "string", "default": null, "description": "Font size: xs, sm, md, lg, xl, 2xl, 3xl, 4xl (uses heading sizes)" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "size": {
+          "xs": "font-size: var(--font-size-heading-xs) = 1.125rem",
+          "sm": "font-size: var(--font-size-heading-sm) = 1.375rem",
+          "md": "font-size: var(--font-size-heading-md) = 1.75rem",
+          "lg": "font-size: var(--font-size-heading-lg) = 2.25rem",
+          "xl": "font-size: var(--font-size-heading-xl) = 2.875rem",
+          "2xl": "font-size: var(--font-size-heading-2xl) = 3.75rem (default when no size)",
+          "3xl": "font-size: var(--font-size-heading-3xl) = 4.625rem",
+          "4xl": "font-size: var(--font-size-heading-4xl) = 5.5rem"
+        },
+        "alignX": {
+          "start": "justify-content: flex-start (default)",
+          "center": "justify-content: center",
+          "end": "justify-content: flex-end"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<div.counter>",
+        "  <span.counter-inner.alignment-{alignX}[.size-{size}]>",
+        "    <span.prefix>{prefix}</span>",
+        "    <span.number data-target={number} data-start={startNumber} data-duration='500'>",
+        "      {number}",
+        "    </span>",
+        "    <span.suffix>{suffix}</span>",
+        "  </span>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".counter": "outer wrapper, margin-top",
+        ".counter-inner": "flex container with alignment and font-size",
+        ".counter-inner.alignment-{start|center|end}": "horizontal alignment",
+        ".counter-inner.size-{xs-4xl}": "font-size variant",
+        ".number": "the animated number element",
+        ".prefix, .suffix": "text before/after number"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "font-size": "var(--font-size-heading-2xl) = 3.75rem (when no size prop)",
+        "font-weight": "var(--font-weight-bold) = 700",
+        "font-variant-numeric": "tabular-nums"
+      },
+
+      "gaps": [
+        "No color prop",
+        "No decimal support (Math.floor used)"
+      ],
+
+      "visual_behavior": "Displays a large number that animates from ~20% of the target value up to the target over 500ms when scrolled into view (IntersectionObserver with 0.6 threshold). Uses heading font sizes. Prefix and suffix are static text."
+    },
+
+    "List": {
+      "import": "@core-elements/list/List.astro",
+      "source_path": "src/components/building-blocks/core-elements/list/List.astro",
+      "category": "core-elements",
+      "purpose": "Renders a list (ul/ol) with items that can have icons, configurable direction, size, and alignment.",
+
+      "props": [
+        { "name": "items", "type": "array", "default": "[]", "description": "Array of ListItem props objects" },
+        { "name": "direction", "type": "string", "default": "vertical", "description": "Layout direction: vertical, horizontal" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Alignment: start, center, end" },
+        { "name": "size", "type": "string", "default": "md", "description": "Font size: xs, sm, md, lg, xl, 2xl, 3xl, 4xl" },
+        { "name": "listType", "type": "string", "default": "icon", "description": "List style: icon, bullet, numbered" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "listType": {
+          "icon": "list-style: none, padding: 0 (icons rendered via ListItem)",
+          "bullet": "list-style: disc, padding-inline-start: var(--spacing-md)",
+          "numbered": "list-style: decimal, <ol> element used"
+        },
+        "direction": {
+          "vertical": "flex-direction: column, gap: var(--spacing-em-sm)",
+          "horizontal": "flex-flow: row wrap, gap: var(--spacing-em-md) or 2xl for bullet/numbered"
+        },
+        "size": {
+          "xs": "font-size: var(--font-size-xs) = 0.75rem",
+          "sm": "font-size: var(--font-size-sm) = 0.875rem",
+          "md": "font-size: var(--font-size-md) = 1rem",
+          "lg": "font-size: var(--font-size-lg) = 1.125rem",
+          "xl": "font-size: var(--font-size-xl) = 1.375rem",
+          "2xl": "font-size: var(--font-size-2xl) = 1.625rem",
+          "3xl": "font-size: var(--font-size-3xl) = 1.875rem",
+          "4xl": "font-size: var(--font-size-4xl) = 2.25rem"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative list items instead of items array"
+      ],
+
+      "dom_structure": [
+        "<div.list>",
+        "  <ul|ol.size-{size}.direction-{direction}.alignment-{alignX}.type-{listType} [data-editable='array']>",
+        "    <ListItem ... />  (for each item)",
+        "  </ul|ol>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".list": "outer wrapper, margin-top",
+        "ul, ol": "the list element with size/direction/type classes",
+        ".size-{xs-4xl}": "font-size variant",
+        ".direction-horizontal": "row wrap layout",
+        ".type-icon": "removes list-style and padding",
+        ".type-bullet": "disc list-style",
+        ".type-numbered": "decimal list-style",
+        ".alignment-{start|center|end}": "flex alignment"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-em-sm) = 0.5em"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Renders a flexbox list with gap-based spacing. Icon type shows custom icons per item with no bullet markers. Horizontal direction wraps items in a row."
+    },
+
+    "ListItem": {
+      "import": "@core-elements/list/ListItem.astro",
+      "source_path": "src/components/building-blocks/core-elements/list/ListItem.astro",
+      "category": "core-elements",
+      "purpose": "Renders a single list item with optional icon and inline markdown text.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": "", "description": "Inline markdown text for the list item" },
+        { "name": "iconName", "type": "string", "default": null, "description": "Icon name to show before text" },
+        { "name": "iconColor", "type": "string", "default": "default", "description": "Icon color (same options as Icon component)" },
+        { "name": "showIcon", "type": "boolean", "default": true, "description": "Whether to render the icon" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content instead of text prop"
+      ],
+
+      "dom_structure": [
+        "<li.item>",
+        "  <span.item-inner[.list-item-has-icon]>",
+        "    <Icon.list-icon />  (if showIcon && iconName)",
+        "    <p [data-editable] [data-prop]>",
+        "      {inline markdown text}",
+        "    </p>",
+        "  </span>",
+        "</li>"
+      ],
+
+      "css_selectors": {
+        ".item": "the <li> element",
+        ".item-inner": "inner span wrapper",
+        ".item-inner.list-item-has-icon": "display: block (when icon present)",
+        ".list-icon": "inline-block icon, 1em x 1em, vertically aligned"
+      },
+
+      "default_styles": {
+        "icon size": "1em x 1em (relative to parent font-size)",
+        "icon margin": "margin-inline-end: var(--spacing-em-xs) = 0.25em"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Renders an <li> with optional inline icon followed by text. Icon is 1em sized so it scales with the list's font size."
+    },
+
+    "DefinitionList": {
+      "import": "@core-elements/definition-list/DefinitionList.astro",
+      "source_path": "src/components/building-blocks/core-elements/definition-list/DefinitionList.astro",
+      "category": "core-elements",
+      "purpose": "Renders a definition list (dl) as a two-column grid of term-definition pairs.",
+
+      "props": [
+        { "name": "items", "type": "array", "default": null, "description": "Array of DefinitionListItem props (title, text)" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Grid alignment: start, center, end" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "alignX": {
+          "start": "grid-template-columns: auto 1fr (default)",
+          "center": "grid-template-columns: 1fr 1fr, titles text-align: end",
+          "end": "grid-template-columns: auto auto, justify-content: end"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative DefinitionListItem children"
+      ],
+
+      "dom_structure": [
+        "<div.definition-list>",
+        "  <dl.alignment-{alignX} [data-editable='array']>",
+        "    <DefinitionListItem ... />  (for each item)",
+        "  </dl>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".definition-list": "outer wrapper, margin-top",
+        "dl": "CSS grid, gap: var(--spacing-em-sm) var(--spacing-em-md)",
+        "dl.alignment-center": "1fr 1fr grid, centered",
+        "dl.alignment-end": "auto auto grid, right-aligned"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "display": "grid",
+        "grid-template-columns": "auto 1fr",
+        "gap": "var(--spacing-em-sm) var(--spacing-em-md)"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Renders a two-column grid where the first column has bold terms and the second has definitions. Alignment changes the column sizing strategy."
+    },
+
+    "DefinitionListItem": {
+      "import": "@core-elements/definition-list/DefinitionListItem.astro",
+      "source_path": "src/components/building-blocks/core-elements/definition-list/DefinitionListItem.astro",
+      "category": "core-elements",
+      "purpose": "Renders a single term-definition pair (dt + dd) inside a DefinitionList.",
+
+      "props": [
+        { "name": "title", "type": "string", "default": null, "description": "The term (dt)" },
+        { "name": "text", "type": "string", "default": null, "description": "The definition (dd)" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content for the definition (dd)",
+        "title: Alternative content for the term (dt)"
+      ],
+
+      "dom_structure": [
+        "<div.definition-list-item>  (display: contents)",
+        "  <dt.title [data-editable] [data-prop]>{title}</dt>",
+        "  <dd.content [data-editable] [data-prop]>{text}</dd>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".definition-list-item": "display: contents (invisible wrapper)",
+        ".title": "font-weight: var(--font-weight-bold) = 700",
+        ".content": "margin: 0"
+      },
+
+      "default_styles": {
+        "display": "contents",
+        "title font-weight": "var(--font-weight-bold) = 700"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Uses display: contents so the dt and dd participate directly in the parent dl grid. Title is bold."
+    },
+
+    "Testimonial": {
+      "import": "@core-elements/testimonial/Testimonial.astro",
+      "source_path": "src/components/building-blocks/core-elements/testimonial/Testimonial.astro",
+      "category": "core-elements",
+      "purpose": "Renders a styled blockquote with quote text, author name, description, and circular author image.",
+
+      "props": [
+        { "name": "text", "type": "string", "default": null, "description": "Quote text, rendered as block markdown" },
+        { "name": "authorName", "type": "string", "default": null, "description": "Author's name" },
+        { "name": "authorDescription", "type": "string", "default": null, "description": "Author's role/description" },
+        { "name": "alignX", "type": "string", "default": "center", "description": "Content alignment: start, center" },
+        { "name": "authorImage", "type": "string", "default": "''", "description": "Author's avatar image URL" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "alignX": {
+          "start": "default flex start alignment",
+          "center": "align-items: center, justify-content: center, text-align: center"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative content instead of quote text"
+      ],
+
+      "dom_structure": [
+        "<blockquote.testimonial>",
+        "  <div.testimonial-inner.alignment-{alignX}>",
+        "    <div.quote [data-editable] [data-prop]>",
+        "      {block markdown text with smart quotes}",
+        "    </div>",
+        "    <div.author>",
+        "      <Image.author-image source={authorImage} />  (80x80px, circular)",
+        "      <cite.author-content>",
+        "        <strong.name>{authorName}</strong>",
+        "        <br />",
+        "        <span.description>{authorDescription}</span>",
+        "      </cite>",
+        "    </div>",
+        "  </div>",
+        "</blockquote>"
+      ],
+
+      "css_selectors": {
+        ".testimonial": "outer blockquote, margin-top, no left border",
+        ".testimonial-inner": "flex column, border, rounded, padding",
+        ".testimonial-inner.alignment-center": "centered text and items",
+        ".quote": "quote text container, font-size: var(--font-size-2xl)",
+        ".quote *:first-child::before": "left curly quote character",
+        ".quote *:last-child::after": "right curly quote character",
+        ".author": "flex row, gap: var(--spacing-md)",
+        ".author-image": "80x80px circular image",
+        ".author-content": "name and description, font-style: normal",
+        ".name": "bold author name",
+        ".description": "author description text"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "background": "var(--color-bg)",
+        "border": "1px solid var(--color-border)",
+        "border-radius": "var(--radius-md) = 12px",
+        "padding": "var(--spacing-md) = 1rem",
+        "quote font-size": "var(--font-size-2xl) = 1.625rem",
+        "author image": "80x80px with border-radius: 9999px"
+      },
+
+      "gaps": [
+        "No star rating prop",
+        "alignX only supports 'start' and 'center' (no 'end')"
+      ],
+
+      "visual_behavior": "Renders a bordered card with a large quote (with smart quote marks automatically added), followed by author info with circular avatar. Default alignment is centered."
+    },
+
+    "Pagination": {
+      "import": "@core-elements/pagination/Pagination.astro",
+      "source_path": "src/components/building-blocks/core-elements/pagination/Pagination.astro",
+      "category": "core-elements",
+      "purpose": "Renders a page navigation with numbered links, ellipsis, and optional prev/next arrows.",
+
+      "props": [
+        { "name": "page", "type": "object", "default": null, "description": "Astro pagination object with currentPage, lastPage, url properties" },
+        { "name": "showArrows", "type": "boolean", "default": false, "description": "Show prev/next arrow buttons" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [],
+
+      "dom_structure": [
+        "<nav.pagination aria-label='Pagination Navigation'>",
+        "  <a.pagination-arrow.pagination-prev>  (if showArrows && not first page)",
+        "  <a href={url}>{pageNum}</a>  (for each visible page)",
+        "  <span.current aria-current='page'>{currentPage}</span>",
+        "  <span aria-hidden>...</span>  (ellipsis)",
+        "  <a.pagination-arrow.pagination-next>  (if showArrows && not last page)",
+        "</nav>"
+      ],
+
+      "css_selectors": {
+        ".pagination": "flex container, centered, margin-top",
+        ".pagination a, .pagination span": "bordered inline items with padding",
+        ".current": "brand-colored active page indicator",
+        ".pagination-arrow": "arrow buttons with icon",
+        ".pagination-prev": "left-rounded arrow",
+        ".pagination-next": "right-rounded arrow"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-wrap": "wrap",
+        "justify-content": "center",
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "current page bg": "var(--color-bg-brand)"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Renders a horizontal row of page number links joined together with borders. Current page is highlighted with brand color. Shows max 5 visible pages with ellipsis for gaps. Renders nothing if only 1 page."
+    },
+
+    "Split": {
+      "import": "@wrappers/split/Split.astro",
+      "source_path": "src/components/building-blocks/wrappers/split/Split.astro",
+      "category": "wrappers",
+      "purpose": "Two-column grid layout with configurable distribution, gap, vertical alignment, and responsive stacking.",
+
+      "props": [
+        { "name": "firstColumnContentSections", "type": "array", "default": "[]", "description": "Content blocks for the first column" },
+        { "name": "secondColumnContentSections", "type": "array", "default": "[]", "description": "Content blocks for the second column" },
+        { "name": "distributionMode", "type": "string", "default": "half", "description": "Column width distribution" },
+        { "name": "verticalAlignment", "type": "string", "default": "top", "description": "Vertical alignment: top, center, bottom, stretch" },
+        { "name": "reverse", "type": "boolean", "default": false, "description": "Reverse visual column order (data stays same)" },
+        { "name": "reverseOrderOnMobile", "type": "boolean", "default": true, "description": "Whether reversed order also reverses on mobile stack" },
+        { "name": "fixedWidth", "type": "number", "default": null, "description": "Fixed width in px for fixed-flexible mode" },
+        { "name": "minSplitWidth", "type": "number", "default": 700, "description": "Container width below which columns stack to single column" },
+        { "name": "gap", "type": "string", "default": "lg", "description": "Gap size: xs, sm, md, lg, xl, 2xl, 3xl" },
+        { "name": "label", "type": "string", "default": null, "description": "Label used for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "distributionMode": {
+          "half": "grid-template-columns: 1fr 1fr",
+          "third-two-thirds": "grid-template-columns: 1fr 2fr",
+          "two-thirds-third": "grid-template-columns: 2fr 1fr",
+          "quarter-three-quarters": "grid-template-columns: 1fr 3fr",
+          "three-quarters-quarter": "grid-template-columns: 3fr 1fr",
+          "fixed-flexible": "grid-template-columns: var(--split-fixed-width) 1fr",
+          "flexible-fixed": "grid-template-columns: 1fr var(--split-fixed-width)"
+        },
+        "verticalAlignment": {
+          "top": "align-items: start",
+          "center": "align-items: center",
+          "bottom": "align-items: end",
+          "stretch": "align-items: stretch, only-child gets height: 100%"
+        },
+        "gap": {
+          "xs": "gap: var(--spacing-xs) = 0.25rem",
+          "sm": "gap: var(--spacing-sm) = 0.5rem",
+          "md": "gap: var(--spacing-md) = 1rem",
+          "lg": "gap: var(--spacing-lg) = 1.5rem",
+          "xl": "gap: var(--spacing-xl) = 2rem",
+          "2xl": "gap: var(--spacing-2xl) = 3rem",
+          "3xl": "gap: var(--spacing-3xl) = 4rem"
+        }
+      },
+
+      "slots": [
+        "first: Content for the first column",
+        "second: Content for the second column"
+      ],
+
+      "dom_structure": [
+        "<section.split>",
+        "  <div.split-inner.align-{verticalAlignment}.{distributionMode}.gap-{gap}[.reversed]>",
+        "    <div.pane.first [data-editable='array']>",
+        "      {first column content}",
+        "    </div>",
+        "    <div.pane.second [data-editable='array']>",
+        "      {second column content}",
+        "    </div>",
+        "  </div>",
+        "</section>"
+      ],
+
+      "css_selectors": {
+        ".split": "outer section, margin-top",
+        ".split-inner": "CSS grid container with distribution/gap/alignment",
+        ".split-inner.half": "1fr 1fr",
+        ".split-inner.third-two-thirds": "1fr 2fr",
+        ".split-inner.two-thirds-third": "2fr 1fr",
+        ".split-inner.quarter-three-quarters": "1fr 3fr",
+        ".split-inner.three-quarters-quarter": "3fr 1fr",
+        ".split-inner.fixed-flexible": "var(--split-fixed-width) 1fr",
+        ".split-inner.align-{top|center|bottom|stretch}": "vertical alignment",
+        ".split-inner.gap-{xs-3xl}": "gap size",
+        ".pane": "container-type: inline-size, min-width: 0",
+        ".pane.first": "first column",
+        ".pane.second": "second column",
+        ".pane > *:first-child": "margin-top: 0 !important"
+      },
+
+      "default_styles": {
+        "display": "grid",
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "grid-template-columns": "1fr 1fr (half mode)",
+        "gap": "var(--spacing-lg) = 1.5rem",
+        "align-items": "start (top)"
+      },
+
+      "gaps": [
+        "No individual column padding props"
+      ],
+
+      "gotchas": [
+        "Responsive stacking uses @container query at minSplitWidth (default 700px), not @media query",
+        "When reverse=true, the distribution mode is automatically flipped (e.g., third-two-thirds becomes two-thirds-third)",
+        "Each pane has container-type: inline-size for nested container queries",
+        "Gap sizes reduce on mobile (<640px viewport)"
+      ],
+
+      "visual_behavior": "A two-column CSS grid that stacks vertically when the container is narrower than minSplitWidth. First child in each pane has margin-top reset to 0. Reverse swaps visual order while keeping data structure intact."
+    },
+
+    "Grid": {
+      "import": "@wrappers/grid/Grid.astro",
+      "source_path": "src/components/building-blocks/wrappers/grid/Grid.astro",
+      "category": "wrappers",
+      "purpose": "Renders a responsive grid of items with configurable min/max widths, layout mode, and gap.",
+
+      "props": [
+        { "name": "items", "type": "array", "default": "[]", "description": "Array of GridItem props" },
+        { "name": "layout", "type": "string", "default": "center", "description": "Layout mode: center (flexbox, centered), start (CSS grid, left-aligned)" },
+        { "name": "minItemWidth", "type": "number", "default": 200, "description": "Minimum item width in px" },
+        { "name": "maxItemWidth", "type": "number", "default": 320, "description": "Maximum item width in px (center mode only)" },
+        { "name": "gap", "type": "string", "default": "md", "description": "Gap size: spacing tokens" },
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "layout": {
+          "center": "display: flex, flex-wrap: wrap, justify-content: center, items have flex: 1 1 minWidth, max-width: maxWidth",
+          "start": "display: grid, grid-template-columns: repeat(auto-fill, minmax(min(minWidth, 100%), 1fr))"
+        },
+        "gap": {
+          "xs": "gap: var(--spacing-xs)",
+          "sm": "gap: var(--spacing-sm)",
+          "md": "gap: var(--spacing-md) = 1rem",
+          "lg": "gap: var(--spacing-lg)",
+          "xl": "gap: var(--spacing-xl)",
+          "2xl": "gap: var(--spacing-2xl)",
+          "3xl": "gap: var(--spacing-3xl)"
+        }
+      },
+
+      "slots": [
+        "Default: Alternative GridItem children instead of items array"
+      ],
+
+      "dom_structure": [
+        "<div.grid>",
+        "  <div.grid-inner.layout-{layout} style='--min-item-width; --max-item-width; --grid-spacing' [data-editable='array']>",
+        "    <GridItem ... />  (for each item)",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".grid": "outer wrapper, margin-top, width: 100%",
+        ".grid-inner": "the flex or grid container",
+        ".grid-inner.layout-center": "flexbox centered layout",
+        ".grid-inner.layout-start": "CSS grid left-aligned layout",
+        ".grid-item": "individual grid item (in center mode: flex: 1 1 minWidth)"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "width": "100%",
+        "gap": "var(--spacing-md) = 1rem"
+      },
+
+      "gaps": [
+        "No columns prop (column count is auto-calculated from min/max widths)"
+      ],
+
+      "gotchas": [
+        "Center layout uses flexbox (items can be different widths within min/max), Start layout uses CSS grid (all items same width)",
+        "Min/max widths are set via CSS custom properties as inline styles"
+      ],
+
+      "visual_behavior": "A responsive grid that auto-wraps items. In center mode, items flex between min and max width and center in the container. In start mode, items fill the grid from left. Both modes auto-calculate column count."
+    },
+
+    "GridItem": {
+      "import": "@wrappers/grid/GridItem.astro",
+      "source_path": "src/components/building-blocks/wrappers/grid/GridItem.astro",
+      "category": "wrappers",
+      "purpose": "Container for a single grid item's content, renders child building blocks.",
+
+      "props": [
+        { "name": "contentSections", "type": "array", "default": null, "description": "Array of content block definitions to render" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content instead of contentSections"
+      ],
+
+      "dom_structure": [
+        "<div.grid-item>",
+        "  <div.grid-item-content [data-editable='array']>",
+        "    {rendered content blocks}",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".grid-item": "container-type: inline-size",
+        ".grid-item-content": "height: 100%",
+        ".grid-item-content > *:only-child": "height: 100% (stretches single child)",
+        ".grid-item-content > *:first-child": "margin-top: 0 !important"
+      },
+
+      "default_styles": {
+        "container-type": "inline-size",
+        "height": "100% (content)"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "A simple container that renders child blocks. First child has margin-top reset. Single child stretches to full height. Has container-type: inline-size for nested container queries."
+    },
+
+    "Card": {
+      "import": "@wrappers/card/Card.astro",
+      "source_path": "src/components/building-blocks/wrappers/card/Card.astro",
+      "category": "wrappers",
+      "purpose": "Flexible card container with background image/color, border, rounding, padding, color scheme, before/after content slots, and optional link wrapping.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "contentSections", "type": "array", "default": null, "description": "Main content blocks" },
+        { "name": "beforeContentSections", "type": "array", "default": null, "description": "Content blocks rendered before main content (e.g. image above text)" },
+        { "name": "afterContentSections", "type": "array", "default": null, "description": "Content blocks rendered after main content" },
+        { "name": "maxContentWidth", "type": "string", "default": null, "description": "Max width token: xs, sm, md, lg, xl, 2xl, 3xl" },
+        { "name": "paddingHorizontal", "type": "string", "default": null, "description": "Horizontal padding: xs, sm, md, lg, xl, 2xl" },
+        { "name": "paddingVertical", "type": "string", "default": null, "description": "Vertical padding: xs, sm, md, lg, xl, 2xl" },
+        { "name": "colorScheme", "type": "string", "default": "inherit", "description": "Color scheme via data-theme attribute" },
+        { "name": "backgroundColor", "type": "string", "default": null, "description": "Background color token: base, surface, accent, highlight" },
+        { "name": "backgroundImage", "type": "object", "default": null, "description": "Background image object with source, alt, positionVertical, positionHorizontal" },
+        { "name": "link", "type": "string", "default": null, "description": "URL to make entire card a clickable link" },
+        { "name": "showBeforeAfter", "type": "boolean", "default": true, "description": "Whether to render before/after content sections" },
+        { "name": "rounded", "type": "boolean", "default": false, "description": "Apply border-radius: var(--radius-md) = 12px" },
+        { "name": "border", "type": "boolean", "default": false, "description": "Apply 1px solid border" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "paddingHorizontal": {
+          "xs": "padding-inline: var(--spacing-xs) = 0.25rem",
+          "sm": "padding-inline: var(--spacing-sm) = 0.5rem",
+          "md": "padding-inline: var(--spacing-md) = 1rem",
+          "lg": "padding-inline: var(--spacing-lg) = 1.5rem",
+          "xl": "padding-inline: var(--spacing-xl) = 2rem",
+          "2xl": "padding-inline: var(--spacing-2xl) = 3rem"
+        },
+        "paddingVertical": {
+          "xs": "padding-block: var(--spacing-xs) = 0.25rem (mobile: xs)",
+          "sm": "padding-block: var(--spacing-sm) = 0.5rem (mobile: xs)",
+          "md": "padding-block: var(--spacing-md) = 1rem (mobile: sm)",
+          "lg": "padding-block: var(--spacing-lg) = 1.5rem (mobile: md)",
+          "xl": "padding-block: var(--spacing-xl) = 2rem (mobile: md)",
+          "2xl": "padding-block: var(--spacing-2xl) = 3rem (mobile: lg)"
+        },
+        "maxContentWidth": {
+          "xs": "max-width: var(--content-width-xs) = 350px",
+          "sm": "max-width: var(--content-width-sm) = 480px",
+          "md": "max-width: var(--content-width-md) = 640px",
+          "lg": "max-width: var(--content-width-lg) = 768px",
+          "xl": "max-width: var(--content-width-xl) = 1024px",
+          "2xl": "max-width: var(--content-width-2xl) = 1280px",
+          "3xl": "max-width: var(--content-width-3xl) = 1536px"
+        },
+        "backgroundColor": {
+          "base": "background-color: var(--color-bg)",
+          "surface": "background-color: var(--color-bg-surface)",
+          "accent": "background-color: var(--color-bg-accent)",
+          "highlight": "background-color: var(--color-bg-highlight)"
+        }
+      },
+
+      "slots": [
+        "Default: Main card content",
+        "before: Content rendered before main content (e.g. image header)",
+        "after: Content rendered after main content (e.g. footer)"
+      ],
+
+      "dom_structure": [
+        "<div.card>",
+        "  <div|a.card-inner[.rounded][.border] [data-theme={colorScheme}]>",
+        "    <Image.background-image background=true />  (if backgroundImage.source)",
+        "    <div.background.bg-{backgroundColor} />  (if backgroundColor)",
+        "    <div.before-content [data-editable='array']>  (if before content)",
+        "      {before content blocks}",
+        "    </div>",
+        "    <div.card-outer-content>",
+        "      <div.card-content[.pad-x-{paddingH}][.pad-y-{paddingV}][.max-width-{maxContentWidth}] [data-editable='array']>",
+        "        {main content blocks}",
+        "      </div>",
+        "    </div>",
+        "    <div.after-content [data-editable='array']>  (if after content)",
+        "      {after content blocks}",
+        "    </div>",
+        "  </div|a>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".card": "outer wrapper, display: block, margin-top",
+        ".card-inner": "main container, position: relative, overflow: hidden, height: 100%",
+        "a.card-inner:hover": "transform: scale(1.05) on hover when link",
+        ".card-inner.rounded": "border-radius: var(--radius-md) = 12px",
+        ".card-inner.border": "border: 1px solid var(--color-border)",
+        ".card-content": "container-type: inline-size, height: 100%, margin-inline: auto, z-index: 10",
+        ".card-content.pad-x-{xs-2xl}": "horizontal padding",
+        ".card-content.pad-y-{xs-2xl}": "vertical padding",
+        ".card-content.max-width-{xs-3xl}": "max-width constraint",
+        ".card-outer-content": "z-index: 20, height: 100%",
+        ".before-content, .after-content": "z-index: 20, first/last child margin reset",
+        ".background": "absolute positioned, inset: 0",
+        ".bg-{base|surface|accent|highlight}": "background color variants"
+      },
+
+      "default_styles": {
+        "display": "block",
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "position": "relative (card-inner)",
+        "overflow": "hidden (card-inner)",
+        "height": "100% (card-inner, for grid fill)"
+      },
+
+      "gaps": [
+        "No shadow prop",
+        "No overlay/tint for background images"
+      ],
+
+      "gotchas": [
+        "When link is set, card-inner becomes an <a> element with hover scale effect",
+        "background image and backgroundColor are layered: image first (z-index 10), then color overlay on top",
+        "card-content has container-type: inline-size for nested container queries",
+        "Vertical padding reduces on mobile (<640px)"
+      ],
+
+      "visual_behavior": "A flexible container that can look like a simple card or a full-width section. Has three content zones: before (full-width), main (with padding/max-width), and after (full-width). Supports background images and color overlays. When linked, scales up on hover."
+    },
+
+    "ButtonGroup": {
+      "import": "@wrappers/button-group/ButtonGroup.astro",
+      "source_path": "src/components/building-blocks/wrappers/button-group/ButtonGroup.astro",
+      "category": "wrappers",
+      "purpose": "Groups multiple buttons in a row or column with configurable alignment.",
+
+      "props": [
+        { "name": "direction", "type": "string", "default": "row", "description": "Layout direction: row, column" },
+        { "name": "alignX", "type": "string", "default": "start", "description": "Horizontal alignment: start, center, end" },
+        { "name": "buttonSections", "type": "array", "default": null, "description": "Array of button block definitions" },
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "direction": {
+          "row": "flex-direction: row, align center/end uses justify-content",
+          "column": "flex-direction: column, align start/end uses align-items"
+        },
+        "alignX": {
+          "start": "row: justify-content: flex-start | column: align-items: flex-start",
+          "center": "row: justify-content: center | column: align-items: center",
+          "end": "row: justify-content: flex-end | column: align-items: flex-end"
+        }
+      },
+
+      "slots": [
+        "Default: Button elements instead of buttonSections array"
+      ],
+
+      "dom_structure": [
+        "<div.button-group>",
+        "  <div.button-group__items.{row|column}.align-{alignX} [data-editable='array']>",
+        "    {button components}",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".button-group": "container-type: inline-size, margin-top, width: 100%",
+        ".button-group__items": "flex container with wrap, gap: var(--spacing-sm)",
+        ".button-group__items.row": "flex-direction: row",
+        ".button-group__items.column": "flex-direction: column",
+        ".button-group__items.align-{start|center|end}": "alignment variant"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "display": "flex",
+        "flex-wrap": "wrap",
+        "gap": "var(--spacing-sm) = 0.5rem",
+        "width": "100%"
+      },
+
+      "gaps": [],
+
+      "gotchas": [
+        "Uses is:global style tag, so CSS is not scoped"
+      ],
+
+      "visual_behavior": "A flex container that wraps buttons with small gaps. Row mode puts buttons side-by-side, column mode stacks them. Alignment controls the start/center/end positioning."
+    },
+
+    "Accordion": {
+      "import": "@wrappers/accordion/Accordion.astro",
+      "source_path": "src/components/building-blocks/wrappers/accordion/Accordion.astro",
+      "category": "wrappers",
+      "purpose": "Renders a collapsible accordion with multiple items, optional single-open mode.",
+
+      "props": [
+        { "name": "items", "type": "array", "default": null, "description": "Array of AccordionItem props (title, contentSections)" },
+        { "name": "openFirst", "type": "boolean", "default": null, "description": "Whether the first item starts open" },
+        { "name": "singleOpen", "type": "boolean", "default": false, "description": "Only one item can be open at a time (uses HTML name attribute)" },
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: AccordionItem elements instead of items array"
+      ],
+
+      "dom_structure": [
+        "<div.accordion>",
+        "  <div [data-editable='array']>",
+        "    <AccordionItem ... />  (for each item)",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".accordion": "outer wrapper, margin-top"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Container for accordion items. Items render as <details> elements. When singleOpen=true, uses the HTML name attribute on details so the browser ensures only one is open."
+    },
+
+    "AccordionItem": {
+      "import": "@wrappers/accordion/AccordionItem.astro",
+      "source_path": "src/components/building-blocks/wrappers/accordion/AccordionItem.astro",
+      "category": "wrappers",
+      "purpose": "Renders a single collapsible accordion item using <details>/<summary> with animated chevron icon.",
+
+      "props": [
+        { "name": "title", "type": "string", "default": null, "description": "Accordion item title shown in the summary" },
+        { "name": "contentSections", "type": "array", "default": null, "description": "Content blocks rendered when expanded" },
+        { "name": "isOpen", "type": "boolean", "default": false, "description": "Whether the item starts open" },
+        { "name": "accordionName", "type": "string", "default": null, "description": "HTML name attribute for single-open grouping" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content instead of contentSections"
+      ],
+
+      "dom_structure": [
+        "<details.accordion-item [open] [name={accordionName}]>",
+        "  <summary.accordion-item-title>",
+        "    <span.accordion-item-title-text>{title}</span>",
+        "    <Icon.accordion-item-icon name='chevron-down' />",
+        "  </summary>",
+        "  <div.accordion-item-detail [data-editable='array']>",
+        "    {content blocks}",
+        "  </div>",
+        "</details>"
+      ],
+
+      "css_selectors": {
+        ".accordion-item": "border-bottom: 1px solid var(--color-border-subtle), container-type: inline-size",
+        ".accordion-item-title": "flex, space-between, font-size: var(--font-size-xl), bold, padding: var(--spacing-md)",
+        ".accordion-item-title:hover": "bg: var(--color-bg-surface)",
+        ".accordion-item-icon": "chevron icon, rotates 180deg when open",
+        ".accordion-item-detail": "padding-inline and padding-bottom: var(--spacing-md)",
+        ".accordion-item[open] .accordion-item-icon": "transform: rotate(180deg)",
+        ".accordion-item[open] .accordion-item-detail": "animation: grow-out 300ms"
+      },
+
+      "default_styles": {
+        "border-bottom": "1px solid var(--color-border-subtle)",
+        "title font-size": "var(--font-size-xl) = 1.375rem",
+        "title font-weight": "var(--font-weight-bold) = 700",
+        "title padding": "var(--spacing-md) = 1rem",
+        "detail padding": "var(--spacing-md) inline and bottom"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "Uses native <details>/<summary> for no-JS collapsing. Title bar has a chevron that animates rotation on open/close. Content area animates in with grow-out animation (300ms). Hover state highlights the summary."
+    },
+
+    "Carousel": {
+      "import": "@wrappers/carousel/Carousel.astro",
+      "source_path": "src/components/building-blocks/wrappers/carousel/Carousel.astro",
+      "category": "wrappers",
+      "purpose": "Renders a scrollable carousel with slides, navigation arrows, indicators, and autoplay using Embla Carousel.",
+
+      "props": [
+        { "name": "slides", "type": "array", "default": "[]", "description": "Array of CarouselSlide props (contentSections)" },
+        { "name": "autoPlay", "type": "boolean", "default": false, "description": "Auto-advance slides every 3 seconds" },
+        { "name": "autoScroll", "type": "boolean", "default": false, "description": "Continuous auto-scroll (disables indicators and arrows)" },
+        { "name": "showIndicators", "type": "boolean", "default": true, "description": "Show dot indicators below slides" },
+        { "name": "showArrows", "type": "boolean", "default": true, "description": "Show prev/next arrow buttons" },
+        { "name": "loop", "type": "boolean", "default": true, "description": "Enable infinite loop scrolling" },
+        { "name": "align", "type": "string", "default": "center", "description": "Slide alignment: start, center, end" },
+        { "name": "slidesToScroll", "type": "string|number", "default": "auto", "description": "Number of slides to scroll at a time, or 'auto'" },
+        { "name": "slideWidthPercent", "type": "number", "default": 100, "description": "Slide width as percentage of viewport" },
+        { "name": "minSlideWidth", "type": "number", "default": 0, "description": "Minimum slide width in px" },
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: CarouselSlide elements instead of slides array"
+      ],
+
+      "dom_structure": [
+        "<section.carousel role='region' aria-label='Carousel'>",
+        "  <div.carousel-inner [data-autoplay] [data-autoscroll] [data-loop] [data-align] [data-show-*]>",
+        "    <div.viewport>",
+        "      <div.track [data-editable='array']>",
+        "        <CarouselSlide ... />  (for each slide)",
+        "      </div>",
+        "    </div>",
+        "    <div.controls-wrapper>",
+        "      <Button.prev />  (tertiary, icon-only, arrow-left)",
+        "      <div.indicators>",
+        "        <button.indicator [data-selected] />  (dynamically generated)",
+        "      </div>",
+        "      <Button.next />  (tertiary, icon-only, arrow-right)",
+        "    </div>",
+        "  </div>",
+        "</section>"
+      ],
+
+      "css_selectors": {
+        ".carousel": "outer section, margin-top, width: 100%",
+        ".carousel-inner": "position: relative",
+        ".viewport": "overflow: hidden",
+        ".track": "display: flex, flex-wrap: nowrap",
+        ".slide": "flex-shrink: 0, flex-basis: max(var(--slide-width), var(--min-slide-width))",
+        ".controls-wrapper": "flex centered, gap: var(--spacing-md), margin-top: var(--spacing-sm)",
+        ".prev .button-inner, .next .button-inner": "border-radius: 9999px",
+        ".indicators": "flex centered, gap: var(--spacing-sm)",
+        ".indicator": "8px dot, border-radius: 9999px",
+        ".indicator[data-selected='true']": "brand-muted color, scale(1.2)"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "width": "100%",
+        "--slide-width": "100%",
+        "--min-slide-width": "0px"
+      },
+
+      "gaps": [
+        "No gap/spacing between slides prop",
+        "No peek (showing partial next slide) without manual slideWidthPercent tuning"
+      ],
+
+      "gotchas": [
+        "Uses Embla Carousel library (JavaScript required)",
+        "autoScroll mode automatically disables indicators and arrows",
+        "Slide width controlled via CSS custom properties set as inline styles"
+      ],
+
+      "visual_behavior": "A horizontally scrolling carousel powered by Embla. Slides can be full-width or partial. Controls include rounded arrow buttons and dot indicators. Supports looping, autoplay (3s interval), and continuous auto-scroll."
+    },
+
+    "CarouselSlide": {
+      "import": "@wrappers/carousel/CarouselSlide.astro",
+      "source_path": "src/components/building-blocks/wrappers/carousel/CarouselSlide.astro",
+      "category": "wrappers",
+      "purpose": "Container for a single carousel slide's content.",
+
+      "props": [
+        { "name": "contentSections", "type": "array", "default": "[]", "description": "Content blocks to render inside the slide" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content instead of contentSections"
+      ],
+
+      "dom_structure": [
+        "<div.slide role='group'>",
+        "  <div.slide__content [data-editable='array']>",
+        "    {content blocks}",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".slide": "container-type: inline-size, flex-shrink: 0",
+        ".slide__content > *:first-child": "margin-top: 0 !important"
+      },
+
+      "default_styles": {
+        "container-type": "inline-size",
+        "flex-shrink": "0",
+        "flex-basis": "max(var(--slide-width, 100%), var(--min-slide-width, 0px))"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "A flex item container for slide content. Width is controlled by the parent Carousel's CSS custom properties."
+    },
+
+    "ContentSelector": {
+      "import": "@wrappers/content-selector/ContentSelector.astro",
+      "source_path": "src/components/building-blocks/wrappers/content-selector/ContentSelector.astro",
+      "category": "wrappers",
+      "purpose": "Tab-based content switcher using CSS-only radio buttons, with side or top navigation.",
+
+      "props": [
+        { "name": "items", "type": "array", "default": "[]", "description": "Array of tab items with title and contentSections" },
+        { "name": "navigationPosition", "type": "string", "default": "start", "description": "Tab navigation position: start (left sidebar), top (horizontal tabs)" },
+        { "name": "label", "type": "string", "default": null, "description": "Label for auto-generating id" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "navigationPosition": {
+          "start": "CSS grid: minmax(10rem, 20rem) minmax(0, 1fr), tabs on left with vertical border",
+          "top": "flex with wrap, tabs on top with bottom border, centered headings"
+        }
+      },
+
+      "slots": [
+        "Default: ContentSelectorPanel elements instead of items array"
+      ],
+
+      "dom_structure": [
+        "<section.content-selector>",
+        "  <div.content-selector-items.nav-{navigationPosition} role='tablist' [data-editable='array']>",
+        "    <ContentSelectorPanel ... />  (for each item)",
+        "  </div>",
+        "</section>"
+      ],
+
+      "css_selectors": {
+        ".content-selector": "margin-top",
+        ".content-selector-items": "tab container (grid or flex based on nav position)",
+        ".content-selector-items.nav-start": "grid layout: sidebar + content",
+        ".content-selector-items.nav-top": "flex wrap layout: horizontal tabs + content below"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "--content-selector-border-width": "1px"
+      },
+
+      "gaps": [],
+
+      "gotchas": [
+        "Uses CSS-only tab switching via radio buttons (no JavaScript)",
+        "First tab auto-selected via CSS :has() when no radio is checked"
+      ],
+
+      "visual_behavior": "A CSS-only tab component. In start mode, tabs appear as a left sidebar list with an active indicator border. In top mode, tabs appear as horizontal tabs above the content. Only one panel is visible at a time."
+    },
+
+    "ContentSelectorPanel": {
+      "import": "@wrappers/content-selector/ContentSelectorPanel.astro",
+      "source_path": "src/components/building-blocks/wrappers/content-selector/ContentSelectorPanel.astro",
+      "category": "wrappers",
+      "purpose": "Single tab panel with radio input, label tab, and content area for ContentSelector.",
+
+      "props": [
+        { "name": "title", "type": "string", "default": null, "description": "Tab label text" },
+        { "name": "contentSections", "type": "array", "default": null, "description": "Content blocks shown when tab is active" },
+        { "name": "checked", "type": "boolean", "default": false, "description": "Whether this tab is initially selected" },
+        { "name": "groupName", "type": "string", "default": "content-selector-tabs", "description": "Radio group name for tab switching" },
+        { "name": "navigationPosition", "type": "string", "default": "start", "description": "Affects heading alignment: start or top" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Alternative content instead of contentSections"
+      ],
+
+      "dom_structure": [
+        "<div.content-selector-item>  (display: contents)",
+        "  <input.content-selector-input type='radio' [checked] />",
+        "  <label.content-selector-tab role='tab'>",
+        "    <Heading text={title} level='h3' />",
+        "  </label>",
+        "  <div.content-selector-panel role='tabpanel'>",
+        "    <div.content-selector-panel-content [data-editable='array']>",
+        "      {content blocks}",
+        "    </div>",
+        "  </div>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".content-selector-item": "display: contents",
+        ".content-selector-input": "display: none (hidden radio)",
+        ".content-selector-tab": "clickable tab label with hover effect",
+        ".content-selector-tab::before": "active indicator line (animated)",
+        ".content-selector-input:checked + .content-selector-tab::before": "visible active indicator",
+        ".content-selector-input:checked + .content-selector-tab + .content-selector-panel": "display: block",
+        ".content-selector-panel": "display: none by default, animation: fade-in",
+        ".content-selector-panel-content > *:first-child": "margin-top: 0 !important"
+      },
+
+      "default_styles": {
+        "tab padding": "var(--spacing-md) = 1rem",
+        "panel": "display: none (shown via CSS :checked selector)",
+        "animation": "fade-in var(--animation-slow) = 500ms"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "CSS-only tab switching using hidden radio inputs and adjacent sibling selectors. Tab labels have a hover state and an animated active indicator line. Panel content fades in when selected."
+    },
+
+    "CustomSection": {
+      "import": "@builders/custom-section/CustomSection.astro",
+      "source_path": "src/components/page-sections/builders/custom-section/CustomSection.astro",
+      "category": "builders",
+      "purpose": "Top-level page section with background image/color, color scheme, padding, max-width, and rounded corners. The primary container for composing page layouts.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Section label, used for auto-generating id" },
+        { "name": "contentSections", "type": "array", "default": null, "description": "Array of content block definitions to render" },
+        { "name": "maxContentWidth", "type": "string", "default": null, "description": "Max content width: xs, sm, md, lg, xl, 2xl, 3xl" },
+        { "name": "paddingHorizontal", "type": "string", "default": null, "description": "Horizontal padding: xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl" },
+        { "name": "paddingVertical", "type": "string", "default": "4xl", "description": "Vertical padding: xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl" },
+        { "name": "colorScheme", "type": "string", "default": "inherit", "description": "Color scheme via data-theme attribute" },
+        { "name": "backgroundColor", "type": "string", "default": null, "description": "Background color token: base, surface, accent, highlight" },
+        { "name": "backgroundImage", "type": "object", "default": null, "description": "Background image with source, alt, positionVertical, positionHorizontal, priority" },
+        { "name": "rounded", "type": "boolean", "default": false, "description": "Apply border-radius: var(--radius-xl) = 24px with overflow: hidden" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "paddingVertical": {
+          "xs": "padding-block: var(--spacing-xs) = 0.25rem (mobile: xs)",
+          "sm": "padding-block: var(--spacing-sm) = 0.5rem (mobile: xs)",
+          "md": "padding-block: var(--spacing-md) = 1rem (mobile: sm)",
+          "lg": "padding-block: var(--spacing-lg) = 1.5rem (mobile: md)",
+          "xl": "padding-block: var(--spacing-xl) = 2rem (mobile: md)",
+          "2xl": "padding-block: var(--spacing-2xl) = 3rem (mobile: lg)",
+          "3xl": "padding-block: var(--spacing-3xl) = 4rem (mobile: xl)",
+          "4xl": "padding-block: var(--spacing-4xl) = 5rem (mobile: 2xl)",
+          "5xl": "padding-block: var(--spacing-5xl) = 6rem (mobile: 3xl)",
+          "6xl": "padding-block: var(--spacing-6xl) = 7rem (mobile: 4xl)"
+        },
+        "paddingHorizontal": {
+          "xs": "padding-inline: var(--spacing-xs) = 0.25rem",
+          "sm": "padding-inline: var(--spacing-sm) = 0.5rem",
+          "md": "padding-inline: var(--spacing-md) = 1rem",
+          "lg": "padding-inline: var(--spacing-lg) = 1.5rem",
+          "xl": "padding-inline: var(--spacing-xl) = 2rem",
+          "2xl": "padding-inline: var(--spacing-2xl) = 3rem",
+          "3xl": "padding-inline: var(--spacing-3xl) = 4rem",
+          "4xl": "padding-inline: var(--spacing-4xl) = 5rem",
+          "5xl": "padding-inline: var(--spacing-5xl) = 6rem",
+          "6xl": "padding-inline: var(--spacing-6xl) = 7rem"
+        },
+        "maxContentWidth": {
+          "xs": "max-width: var(--content-width-xs) = 350px",
+          "sm": "max-width: var(--content-width-sm) = 480px",
+          "md": "max-width: var(--content-width-md) = 640px",
+          "lg": "max-width: var(--content-width-lg) = 768px",
+          "xl": "max-width: var(--content-width-xl) = 1024px",
+          "2xl": "max-width: var(--content-width-2xl) = 1280px",
+          "3xl": "max-width: var(--content-width-3xl) = 1536px"
+        },
+        "backgroundColor": {
+          "base": "background-color: var(--color-bg)",
+          "surface": "background-color: var(--color-bg-surface)",
+          "accent": "background-color: var(--color-bg-accent)",
+          "highlight": "background-color: var(--color-bg-highlight)"
+        }
+      },
+
+      "slots": [
+        "Default: Content blocks instead of contentSections array"
+      ],
+
+      "dom_structure": [
+        "<section.custom-section>",
+        "  <div.outer-content[.rounded] [data-theme={colorScheme}]>",
+        "    <Image.background-image background=true />  (if backgroundImage.source)",
+        "    <div.background.bg-{backgroundColor} />  (if backgroundColor)",
+        "    <div.content[.pad-x-{paddingH}][.pad-y-{paddingV}][.max-width-{maxContentWidth}] [data-editable='array']>",
+        "      {content blocks}",
+        "    </div>",
+        "  </div>",
+        "</section>"
+      ],
+
+      "css_selectors": {
+        ".custom-section": "outer section element",
+        ".outer-content": "position: relative, height: 100%",
+        ".outer-content.rounded": "border-radius: var(--radius-xl) = 24px, overflow: hidden",
+        ".content": "container-type: inline-size, margin-inline: auto, z-index: 10",
+        ".content.pad-x-{xs-6xl}": "horizontal padding",
+        ".content.pad-y-{xs-6xl}": "vertical padding",
+        ".content.max-width-{xs-3xl}": "max-width constraint",
+        ".content > *:first-child": "margin-top: 0 !important",
+        ".content > *:last-child": "margin-bottom: 0 !important",
+        ".background": "absolute positioned, inset: 0",
+        ".bg-{base|surface|accent|highlight}": "background color variants",
+        ".background-image": "z-index: 10 (behind content)"
+      },
+
+      "default_styles": {
+        "paddingVertical": "4xl = var(--spacing-4xl) = 5rem (mobile: 2xl = 3rem)",
+        "position": "relative (outer-content)",
+        "container-type": "inline-size (content)",
+        "z-index": "10 (content above background)"
+      },
+
+      "gaps": [
+        "No overlay/tint for background images",
+        "No border prop (unlike Card)",
+        "No shadow prop"
+      ],
+
+      "gotchas": [
+        "Default paddingVertical is '4xl' (5rem / 3rem mobile) - the largest default of any component",
+        "CustomSection has padding up to 6xl (7rem) while Card only goes up to 2xl (3rem)",
+        "rounded uses --radius-xl = 24px (vs Card's --radius-md = 12px)",
+        "Vertical padding reduces on mobile (<640px) by roughly 2 steps",
+        "content has container-type: inline-size enabling container queries in children"
+      ],
+
+      "visual_behavior": "The primary page-level section wrapper. Creates a full-width section with generous default vertical padding (5rem). Supports background images and color overlays behind the content. Content is horizontally centered with optional max-width. When rounded, gets large corner radius with hidden overflow."
+    },
+
+    "Form": {
+      "import": "@forms/form/Form.astro",
+      "source_path": "src/components/building-blocks/forms/form/Form.astro",
+      "category": "forms",
+      "purpose": "Renders an HTML form element with method=post and multipart/form-data encoding.",
+
+      "props": [
+        { "name": "action", "type": "string", "default": null, "description": "Form action URL" },
+        { "name": "formBlocks", "type": "array", "default": "[]", "description": "Array of form field block definitions" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: Form field elements instead of formBlocks array"
+      ],
+
+      "dom_structure": [
+        "<form.form action={action} method='post' enctype='multipart/form-data'>",
+        "  <div [data-editable='array']>",
+        "    {form field blocks}",
+        "  </div>",
+        "</form>"
+      ],
+
+      "css_selectors": {
+        ".form": "margin-top, width: 100%"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-lg) = 1.5rem",
+        "width": "100%"
+      },
+
+      "gaps": [],
+
+      "visual_behavior": "A standard HTML form wrapper. Renders child form field blocks inside it. Always uses POST method with multipart encoding."
+    },
+
+    "Input": {
+      "import": "@forms/input/Input.astro",
+      "source_path": "src/components/building-blocks/forms/input/Input.astro",
+      "category": "forms",
+      "purpose": "Renders a labeled text input field with configurable type, placeholder, and required indicator.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text above the input" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name attribute" },
+        { "name": "type", "type": "string", "default": "text", "description": "Input type: text, email, tel, number, etc." },
+        { "name": "placeholder", "type": "string", "default": null, "description": "Placeholder text" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Whether the field is required (shows * indicator)" },
+        { "name": "value", "type": "string", "default": null, "description": "Initial value" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<div.input>",
+        "  <label.label for={fieldId}>",
+        "    {label} <span.input-required>*</span>",
+        "  </label>",
+        "  <input.field type={type} name={name} />",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".input": "flex column, gap: var(--spacing-xs), margin-bottom: var(--spacing-md), width: 100%",
+        ".label": "label element",
+        ".input-required": "red asterisk",
+        ".field": "the actual input element"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-xs) = 0.25rem",
+        "margin-bottom": "var(--spacing-md) = 1rem",
+        "width": "100%"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A standard form input with label above. Required fields show a red asterisk. Full-width by default with bottom margin for spacing between fields."
+    },
+
+    "Textarea": {
+      "import": "@forms/textarea/Textarea.astro",
+      "source_path": "src/components/building-blocks/forms/textarea/Textarea.astro",
+      "category": "forms",
+      "purpose": "Renders a labeled textarea field with configurable placeholder and required indicator.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "placeholder", "type": "string", "default": null, "description": "Placeholder text" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "value", "type": "string", "default": null, "description": "Initial value" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<div.textarea>",
+        "  <label.label for={fieldId}>{label} <span.textarea-required>*</span></label>",
+        "  <textarea.field name={name}>{value}</textarea>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".textarea": "flex column, gap: xs, margin-bottom: md, width: 100%",
+        ".textarea-required": "red asterisk"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-xs)",
+        "margin-bottom": "var(--spacing-md)",
+        "width": "100%"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A standard textarea with label. Same layout pattern as Input."
+    },
+
+    "Select": {
+      "import": "@forms/select/Select.astro",
+      "source_path": "src/components/building-blocks/forms/select/Select.astro",
+      "category": "forms",
+      "purpose": "Renders a labeled select dropdown with options array or slot content.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "options", "type": "array", "default": "[]", "description": "Array of {value, label} objects" },
+        { "name": "placeholder", "type": "string", "default": null, "description": "Placeholder option (disabled)" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "value", "type": "string", "default": null, "description": "Selected value" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": [
+        "Default: SelectOption elements (used when options array is empty)"
+      ],
+
+      "dom_structure": [
+        "<div.select>",
+        "  <label.label for={fieldId}>{label}</label>",
+        "  <select.field name={name}>",
+        "    <option value='' disabled>{placeholder}</option>",
+        "    <SelectOption ... />  (for each option)",
+        "  </select>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".select": "flex column, gap: xs, margin-bottom: md, width: 100%",
+        ".select-required": "red asterisk"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-xs)",
+        "margin-bottom": "var(--spacing-md)",
+        "width": "100%"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A standard select dropdown with label. Placeholder option is disabled."
+    },
+
+    "SelectOption": {
+      "import": "@forms/select/SelectOption.astro",
+      "source_path": "src/components/building-blocks/forms/select/SelectOption.astro",
+      "category": "forms",
+      "purpose": "Renders a single <option> element inside a Select component.",
+
+      "props": [
+        { "name": "value", "type": "string", "default": "", "description": "Option value" },
+        { "name": "label", "type": "string", "default": "", "description": "Display label" },
+        { "name": "selected", "type": "boolean", "default": false, "description": "Pre-selected" },
+        { "name": "disabled", "type": "boolean", "default": false, "description": "Disabled option" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": ["Default: Additional content inside option"],
+
+      "dom_structure": [
+        "<option value={value} [selected] [disabled]>{label}<slot /></option>"
+      ],
+
+      "css_selectors": {},
+      "default_styles": {},
+      "gaps": [],
+      "visual_behavior": "A plain HTML option element."
+    },
+
+    "Submit": {
+      "import": "@forms/submit/Submit.astro",
+      "source_path": "src/components/building-blocks/forms/submit/Submit.astro",
+      "category": "forms",
+      "purpose": "Renders a submit button (wraps Button component with type='submit').",
+
+      "props": [
+        { "name": "text", "type": "string", "default": "Submit", "description": "Button label" },
+        { "name": "variant", "type": "string", "default": "primary", "description": "Button variant (same as Button)" },
+        { "name": "size", "type": "string", "default": "md", "description": "Button size (same as Button)" },
+        { "name": "iconName", "type": "string", "default": null, "description": "Icon name" },
+        { "name": "iconPosition", "type": "string", "default": "before", "description": "Icon position" },
+        { "name": "hideText", "type": "boolean", "default": false, "description": "Icon-only mode" },
+        { "name": "disabled", "type": "boolean", "default": false, "description": "Disabled state" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+
+      "slots": ["Default: Alternative button content"],
+
+      "dom_structure": [
+        "<Button.submit element='button' type='submit' variant={variant} size={size} />"
+      ],
+
+      "css_selectors": {
+        ".submit": "margin-top: var(--spacing-md)"
+      },
+
+      "default_styles": {
+        "margin-top": "var(--spacing-md) = 1rem"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A Button component configured as a submit button. Has margin-top for spacing from form fields above."
+    },
+
+    "ChoiceGroup": {
+      "import": "@forms/choice-group/ChoiceGroup.astro",
+      "source_path": "src/components/building-blocks/forms/choice-group/ChoiceGroup.astro",
+      "category": "forms",
+      "purpose": "Renders a group of radio buttons or checkboxes with labels, supporting vertical or horizontal orientation.",
+
+      "props": [
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "options", "type": "array", "default": "[]", "description": "Array of {value, label, checked} objects" },
+        { "name": "title", "type": "string", "default": null, "description": "Legend/title for the fieldset" },
+        { "name": "orientation", "type": "string", "default": "vertical", "description": "Layout: vertical, horizontal" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "multiple", "type": "boolean", "default": false, "description": "If true, renders checkboxes instead of radio buttons" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {
+        "orientation": {
+          "vertical": "flex-direction: column",
+          "horizontal": "display: grid, grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"
+        }
+      },
+
+      "slots": [],
+
+      "dom_structure": [
+        "<fieldset.choice-group>",
+        "  <legend.legend>{title} <span.choice-group-required>*</span></legend>",
+        "  <div.choice-group-options.orientation-{orientation}[.multiple]>",
+        "    <label.choice-group-option>",
+        "      <input.choice-group-field type={radio|checkbox} />",
+        "      <span.choice-group-label-text>{label}</span>",
+        "    </label>",
+        "  </div>",
+        "</fieldset>"
+      ],
+
+      "css_selectors": {
+        ".choice-group": "flex column, gap: sm, padding: md, margin-bottom: md",
+        ".choice-group-options": "flex column or grid",
+        ".choice-group-options.orientation-horizontal": "auto-fit grid",
+        ".choice-group-option": "label wrapping input + text"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-sm)",
+        "margin-bottom": "var(--spacing-md)",
+        "padding": "var(--spacing-md)"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A fieldset with radio buttons (single select) or checkboxes (multiple select). Vertical stacks options, horizontal uses auto-fit grid."
+    },
+
+    "Hidden": {
+      "import": "@forms/hidden/Hidden.astro",
+      "source_path": "src/components/building-blocks/forms/hidden/Hidden.astro",
+      "category": "forms",
+      "purpose": "Renders a hidden form input.",
+
+      "props": [
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "value", "type": "string", "default": null, "description": "Hidden value" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<input.hidden type='hidden' name={name} value={value} />"
+      ],
+
+      "css_selectors": {},
+      "default_styles": {},
+      "gaps": [],
+      "visual_behavior": "An invisible form field that submits a hidden value."
+    },
+
+    "Date": {
+      "import": "@forms/date/Date.astro",
+      "source_path": "src/components/building-blocks/forms/date/Date.astro",
+      "category": "forms",
+      "purpose": "Renders a labeled date input field with optional min/max constraints.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "value", "type": "string", "default": null, "description": "Initial date value" },
+        { "name": "min", "type": "string", "default": null, "description": "Minimum date" },
+        { "name": "max", "type": "string", "default": null, "description": "Maximum date" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<div.date>",
+        "  <label.label for={fieldId}>{label}</label>",
+        "  <input.field type='date' name={name} [min] [max] />",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".date": "flex column, gap: xs, margin-bottom: md, width: 100%",
+        ".date-required": "red asterisk"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-xs)",
+        "margin-bottom": "var(--spacing-md)",
+        "width": "100%"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A standard date picker input with label. Same layout pattern as Input."
+    },
+
+    "FileUpload": {
+      "import": "@forms/file-upload/FileUpload.astro",
+      "source_path": "src/components/building-blocks/forms/file-upload/FileUpload.astro",
+      "category": "forms",
+      "purpose": "Renders a labeled file upload input with accept and multiple file support.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "accept", "type": "string", "default": null, "description": "Accepted file types" },
+        { "name": "multiple", "type": "boolean", "default": false, "description": "Allow multiple files" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<div.file-upload>",
+        "  <label.label for={fieldId}>{label}</label>",
+        "  <input.field type='file' name={name} [accept] [multiple] />",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".file-upload": "flex column, gap: xs, margin-bottom: md, width: 100%"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "var(--spacing-xs)",
+        "margin-bottom": "var(--spacing-md)",
+        "width": "100%"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A standard file input with label. Same layout pattern as Input."
+    },
+
+    "Segments": {
+      "import": "@forms/segments/Segments.astro",
+      "source_path": "src/components/building-blocks/forms/segments/Segments.astro",
+      "category": "forms",
+      "purpose": "Renders a segmented control (radio/checkbox button group) with styled toggle buttons.",
+
+      "props": [
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "options", "type": "array", "default": "[]", "description": "Array of {value, label, icon, checked} objects" },
+        { "name": "title", "type": "string", "default": null, "description": "Legend text" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "iconOnly", "type": "boolean", "default": false, "description": "Show only icons, hide labels" },
+        { "name": "multiple", "type": "boolean", "default": false, "description": "Checkbox mode (multi-select)" },
+        { "name": "keepStateOnRefresh", "type": "boolean", "default": false, "description": "Enable autocomplete to preserve state" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<fieldset.segments>",
+        "  <legend.legend>{title}</legend>",
+        "  <div.segments-options[.icon-only][.multiple]>",
+        "    <label.segments-option>",
+        "      <input.segments-field type={radio|checkbox} />",
+        "      <span.segment>",
+        "        <Icon.segment-icon />",
+        "        <span.segment-label>{label}</span>",
+        "      </span>",
+        "    </label>",
+        "  </div>",
+        "</fieldset>"
+      ],
+
+      "css_selectors": {
+        ".segments": "flex column, gap: sm, no border, no padding",
+        ".segments-options": "display: flex (horizontal strip of buttons)",
+        ".segment": "styled button with surface bg, border, hover effects",
+        ".segments-field:checked + .segment": "bg: var(--color-bg), border: var(--color-brand)",
+        "first/last .segment": "rounded start/end corners"
+      },
+
+      "default_styles": {
+        "display": "flex",
+        "gap": "var(--spacing-sm)",
+        "segment bg": "var(--color-bg-surface)",
+        "segment border": "1px solid var(--color-border)",
+        "segment padding": "var(--spacing-xs) var(--spacing-sm)",
+        "selected border": "1px solid var(--color-brand)"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A horizontal strip of toggle buttons that look connected. Selected state shows brand-colored border. First and last segments have rounded corners. Can work as single-select (radio) or multi-select (checkbox)."
+    },
+
+    "Slider": {
+      "import": "@forms/slider/Slider.astro",
+      "source_path": "src/components/building-blocks/forms/slider/Slider.astro",
+      "category": "forms",
+      "purpose": "Renders a toggle switch (on/off slider) with label.",
+
+      "props": [
+        { "name": "label", "type": "string", "default": null, "description": "Label text" },
+        { "name": "name", "type": "string", "default": null, "description": "Form field name" },
+        { "name": "checked", "type": "boolean", "default": false, "description": "Initial checked state" },
+        { "name": "required", "type": "boolean", "default": false, "description": "Required field" },
+        { "name": "value", "type": "string", "default": "on", "description": "Submitted value when checked" },
+        { "name": "class", "type": "string", "default": null, "description": "Additional CSS class(es)" }
+      ],
+
+      "prop_value_maps": {},
+      "slots": [],
+
+      "dom_structure": [
+        "<div.slider>",
+        "  <label.slider-container for={fieldId}>",
+        "    <span.slider-switch>",
+        "      <input.slider-input type='checkbox' />",
+        "      <span.slider-track>",
+        "        <::before />  (the sliding knob)",
+        "      </span>",
+        "    </span>",
+        "    <span.slider-label>{label}</span>",
+        "  </label>",
+        "</div>"
+      ],
+
+      "css_selectors": {
+        ".slider": "flex, margin-bottom: md, width: 100%",
+        ".slider-container": "flex, align-items: center, gap: sm, cursor: pointer",
+        ".slider-switch": "48x26px container",
+        ".slider-track": "rounded track, bg: var(--color-border)",
+        ".slider-input:checked + .slider-track": "bg: var(--color-bg-inverse)",
+        ".slider-track::before": "20px white circle knob, translates 22px when checked"
+      },
+
+      "default_styles": {
+        "switch width": "48px",
+        "switch height": "26px",
+        "knob size": "20px",
+        "track bg unchecked": "var(--color-border)",
+        "track bg checked": "var(--color-bg-inverse)",
+        "transition": "200ms cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+
+      "gaps": [],
+      "visual_behavior": "A toggle switch with a sliding circular knob. The track changes color when checked. Label appears to the right of the switch."
+    }
+  }
+}

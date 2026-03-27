@@ -1,0 +1,27 @@
+label: Contact Form
+icon: contact_mail
+description: Contact section with split layout showing contact details and a form card.
+value:
+  _component: page-sections/info-blocks/contact-form
+  heading: "Contact Details"
+  contact_text: "123 Train St, San Francisco, CA 9107"
+  phone_label: "Phone"
+  phone_value: "(123) 456 - 7895"
+  email_label: "Email"
+  email_value: "info@example.com"
+  form_heading: "Say Hello"
+  form_action: ""
+  submit_text: "Send message"
+  colorScheme: inherit
+  backgroundColor: accent
+preview:
+  text:
+    - Contact Form
+  subtext:
+    - key: heading
+  icon: contact_mail
+picker_preview:
+  text: Contact Form
+  subtext: Contact section with details and a message form.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/contact-form/contact-form.cloudcannon.inputs.yml

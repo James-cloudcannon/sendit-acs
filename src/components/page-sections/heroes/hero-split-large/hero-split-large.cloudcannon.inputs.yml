@@ -1,0 +1,47 @@
+heading:
+  type: text
+  comment: Main heading text for the hero section.
+
+description:
+  type: markdown
+  comment: Supporting text below the heading.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+buttonSections:
+  type: array
+  comment: CTA buttons displayed below the description.
+  options:
+    structures: _structures.buttonSections
+
+images:
+  type: array
+  comment: Hero images. Use 1 image for a single large image, or 3 for a collage layout.
+  options:
+    structures: _structures.heroImage
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

@@ -1,0 +1,41 @@
+heading:
+  type: text
+  comment: Section heading text. Supports inline HTML (e.g., use <em> tags for colored words).
+
+description:
+  type: markdown
+  comment: Supporting paragraph below the heading.
+  options:
+    bold: true
+    italic: true
+    link: true
+
+stats:
+  type: array
+  comment: Statistics to display (recommended 4 items).
+  options:
+    structures: _structures.statItem
+
+colorScheme:
+  type: select
+  options:
+    values:
+      - id: inherit
+        name: Inherit
+      - id: dark
+        name: Dark
+
+backgroundColor:
+  type: select
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight

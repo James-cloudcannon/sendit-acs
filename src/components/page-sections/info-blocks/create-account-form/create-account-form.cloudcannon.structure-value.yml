@@ -1,0 +1,39 @@
+label: Create Account Form
+icon: person_add
+description: Centered signup card with form fields, social sign-in buttons, and login link.
+value:
+  _component: page-sections/info-blocks/create-account-form
+  heading: Create Account
+  form_action: ""
+  submit_text: Create an Account
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: Sign In with Google
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: tertiary
+      size: md
+    - _component: building-blocks/core-elements/button
+      text: Sign In with Facebook
+      hideText: false
+      link: ""
+      iconName: ""
+      iconPosition: before
+      variant: tertiary
+      size: md
+  footer_text: "[Log In](/login/)"
+  colorScheme: inherit
+  backgroundColor:
+preview:
+  text:
+    - Create Account Form
+  subtext:
+    - key: heading
+  icon: person_add
+picker_preview:
+  text: Create Account Form
+  subtext: Centered signup card with form fields, social sign-in buttons, and login link.
+_inputs_from_glob:
+  - /src/components/page-sections/info-blocks/create-account-form/create-account-form.cloudcannon.inputs.yml

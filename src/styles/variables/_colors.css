@@ -1,17 +1,22 @@
 :where(:root) {
   --gray-0: #fff;
-  --gray-1: #eaeaea;
-  --gray-2: #d4d4d4;
-  --gray-3: #bfbfbf;
-  --gray-4: #aaa;
-  --gray-5: #949494;
-  --gray-6: #7f7f7f;
-  --gray-7: #6a6a6a;
-  --gray-8: #555;
-  --gray-9: #404040;
-  --gray-10: #2a2a2a;
-  --gray-11: #151515;
+  --gray-1: #f3f4f6;
+  --gray-2: #e5e7eb;
+  --gray-3: #d1d5db;
+  --gray-4: #9ca3af;
+  --gray-5: #6b7280;
+  --gray-6: #4b5563;
+  --gray-7: #374151;
+  --gray-8: #1f2937;
+  --gray-9: #111827;
+  --gray-10: #0a0a0a;
+  --gray-11: #050505;
   --gray-12: #000;
+
+  --brand-primary: #e71818;
+  --brand-primary-light: rgba(231, 24, 24, 0.15);
+  --brand-primary-dark: #c41414;
+  --brand-primary-darker: #a01010;
 
   --blue-light: #e8f4fd;
   --blue-dark: #3b82f6;
@@ -25,8 +30,8 @@
   --orange-light: #fef3e7;
   --orange-dark: #f97316;
 
-  --red-light: #fee8e8;
-  --red-dark: #ef4444;
+  --red-light: #fde8e8;
+  --red-dark: #e71818;
 
   --purple-light: #f3e8ff;
   --purple-dark: #a855f7;

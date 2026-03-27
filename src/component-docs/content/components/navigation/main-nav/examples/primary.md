@@ -3,7 +3,7 @@ title: 'Primary Main Nav'
 spacing: 'top'
 blocks:
   _component: 'navigation/main-nav'
-  logoSource: /src/assets/images/component-docs/logo.svg
+  logoSource: /images/logo.svg
   logoAlt: Logo
   navData:
     - name: 'Home'

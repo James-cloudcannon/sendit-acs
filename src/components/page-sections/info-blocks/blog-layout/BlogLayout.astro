@@ -1,0 +1,104 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Card from "@wrappers/card/Card.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+
+const {
+  posts = [],
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["blog-layout", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <div class="blog-layout__grid" data-editable="array" data-prop="posts">
+    {posts.map((post) => (
+      <div class="blog-layout__item" data-editable="array-item" data-id="page-sections/info-blocks/blog-layout/postItem">
+        <Card
+          link={post.url}
+          rounded={true}
+          colorScheme="dark"
+          backgroundImage={post.image}
+          paddingHorizontal="lg"
+          paddingVertical="lg"
+        >
+          <SimpleText text={post.category} size="xs" class="blog-layout__category" data-prop="category" />
+          <Heading level="h3" size="sm" data-prop="title">{post.title}</Heading>
+          <SimpleText text={post.date} size="xs" data-prop="date" />
+        </Card>
+      </div>
+    ))}
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .blog-layout__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      gap: var(--spacing-lg);
+      width: 100%;
+    }
+
+    .blog-layout__item {
+      > .card {
+        margin-top: 0;
+        height: 100%;
+
+        > .card-inner {
+          min-height: 280px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 15;
+            border-radius: inherit;
+            pointer-events: none;
+          }
+
+          > .card-outer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            > .card-content {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .blog-layout__category {
+      margin-top: 0;
+
+      > .simple-text-content {
+        background: var(--color-brand);
+        color: #fff;
+        display: inline-block;
+        padding: 0.25em 0.75em;
+        border-radius: var(--radius-full);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+    }
+  }
+</style>

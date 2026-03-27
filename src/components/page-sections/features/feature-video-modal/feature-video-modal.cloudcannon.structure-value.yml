@@ -1,0 +1,24 @@
+label: Feature Video Modal
+icon: play_circle
+description: Clickable video thumbnail that opens a modal video player.
+value:
+  _component: page-sections/features/feature-video-modal
+  video_type: vimeo
+  video_id: ""
+  video_title: Video Player
+  thumbnail:
+    source: ""
+    alt: ""
+  background_color: accent
+  colorScheme: inherit
+preview:
+  text:
+    - Feature Video Modal
+  subtext:
+    - key: video_title
+  icon: play_circle
+picker_preview:
+  text: Feature Video Modal
+  subtext: Clickable video thumbnail that opens a modal video player.
+_inputs_from_glob:
+  - /src/components/page-sections/features/feature-video-modal/feature-video-modal.cloudcannon.inputs.yml

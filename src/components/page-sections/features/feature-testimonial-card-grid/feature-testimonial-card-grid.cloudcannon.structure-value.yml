@@ -1,0 +1,64 @@
+label: Testimonial Card Grid
+icon: format_quote
+description: Testimonial section with dark background and a grid of white testimonial cards.
+value:
+  _component: page-sections/features/feature-testimonial-card-grid
+  heading: "Build relationships that last"
+  description: ""
+  testimonials:
+    - authorName: "Jane Doe"
+      authorDescription: "CEO at Company"
+      text: "This product has transformed the way we work."
+      authorImage: ""
+    - authorName: "John Smith"
+      authorDescription: "Marketing Director"
+      text: "An incredible tool that delivers real results."
+      authorImage: ""
+    - authorName: "Sarah Johnson"
+      authorDescription: "Head of Marketing"
+      text: "I can't imagine working without this anymore."
+      authorImage: ""
+  colorScheme: dark
+  backgroundColor: base
+preview:
+  text:
+    - Testimonial Card Grid
+  subtext:
+    - key: heading
+  icon: format_quote
+picker_preview:
+  text: Testimonial Card Grid
+  subtext: Testimonial section with dark background and a grid of white testimonial cards.
+_inputs_from_glob:
+  - /src/components/page-sections/features/feature-testimonial-card-grid/feature-testimonial-card-grid.cloudcannon.inputs.yml
+_structures:
+  testimonialItem:
+    values:
+      - label: Testimonial
+        value:
+          authorName: ""
+          authorDescription: ""
+          text: ""
+          authorImage: ""
+        preview:
+          text:
+            - key: authorName
+          subtext:
+            - key: text
+          icon: format_quote
+        _inputs:
+          authorName:
+            type: text
+            comment: Name of the testimonial author.
+          authorDescription:
+            type: text
+            comment: Author's role or title.
+          text:
+            type: markdown
+            comment: The testimonial quote text.
+            options:
+              bold: true
+              italic: true
+          authorImage:
+            type: image
+            comment: Circular avatar image of the author.

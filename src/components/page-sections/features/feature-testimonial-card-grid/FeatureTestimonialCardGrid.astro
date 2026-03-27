@@ -1,0 +1,110 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Card from "@wrappers/card/Card.astro";
+import Testimonial from "@core-elements/testimonial/Testimonial.astro";
+
+const {
+  heading = "Build relationships that last",
+  description = "",
+  testimonials = [],
+  colorScheme = "dark",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["feature-testimonial-card-grid", className]}
+  maxContentWidth="3xl"
+  paddingHorizontal="xl"
+  paddingVertical="4xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Heading level="h2" size="2xl" alignX="center" text={heading} data-prop="heading" />
+  <SimpleText text={description} size="md" alignX="center" data-prop="description" />
+
+  <div class="feature-testimonial-card-grid__grid" data-editable="array" data-prop="testimonials">
+    {testimonials.map((testimonial) => (
+      <div class="feature-testimonial-card-grid__item" data-editable="array-item" data-id="page-sections/features/feature-testimonial-card-grid/testimonialItem">
+        <Card colorScheme="light" backgroundColor="base" rounded={true}>
+          <Testimonial
+            text={testimonial.text}
+            authorName={testimonial.authorName}
+            authorDescription={testimonial.authorDescription}
+            authorImage={testimonial.authorImage}
+            alignX="start"
+          />
+        </Card>
+      </div>
+    ))}
+  </div>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .feature-testimonial-card-grid__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 320px));
+      justify-content: center;
+      gap: var(--spacing-xl);
+      width: 100%;
+      margin-top: var(--spacing-2xl);
+    }
+
+    @media (max-width: 768px) {
+      .feature-testimonial-card-grid__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-inline: auto;
+      }
+    }
+
+    .feature-testimonial-card-grid__item > .card {
+      margin-top: 0;
+      height: 100%;
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial {
+      margin-top: 0;
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner {
+      border: none;
+      background: transparent;
+      flex-direction: column-reverse;
+      padding: var(--spacing-sm);
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .author {
+      margin-top: 0;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .author .name {
+      color: var(--color-text-strong);
+      font-weight: 600;
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .author .description {
+      color: var(--color-text);
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .quote :global(*) {
+      font-size: var(--font-size-md);
+      color: var(--color-text);
+    }
+
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .quote :global(*:first-child)::before,
+    .feature-testimonial-card-grid__item > .card .testimonial > .testimonial-inner > .quote :global(*:last-child)::after {
+      content: none;
+    }
+  }
+</style>

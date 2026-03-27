@@ -1,0 +1,20 @@
+label: CTA Centre
+icon: campaign
+description: Centered heading and description text for section introductions.
+value:
+  _component: page-sections/ctas/cta-centre
+  heading: "Sendit Features"
+  description: ""
+  colorScheme: inherit
+  backgroundColor: none
+preview:
+  text:
+    - CTA Centre
+  subtext:
+    - key: heading
+  icon: campaign
+picker_preview:
+  text: CTA Centre
+  subtext: Centered heading and description text for section introductions.
+_inputs_from_glob:
+  - /src/components/page-sections/ctas/cta-centre/cta-centre.cloudcannon.inputs.yml

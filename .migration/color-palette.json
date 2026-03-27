@@ -1,0 +1,62 @@
+{
+  "primary": {
+    "hex": "#e71818",
+    "name": "red",
+    "role": "Primary brand/accent color",
+    "source": "discovery: accent role count 9 + button role count 7, confirmed by hero CTA and heading accent in screenshots"
+  },
+  "accent": {
+    "hex": "#e71818",
+    "name": "red",
+    "role": "Accent/CTA color (same as primary for this site)",
+    "source": "discovery: button role count 7, confirmed as CTA button color in screenshots"
+  },
+  "text": {
+    "hex": "#374151",
+    "role": "Body text",
+    "source": "screenshot validation: body text appears as gray (Tailwind text-gray-700), discovery only captured #000000 text role count 40"
+  },
+  "text_strong": {
+    "hex": "#000000",
+    "role": "Headings/strong text",
+    "source": "discovery: heading role count 12 + text role count 40, confirmed as heading color in screenshots"
+  },
+  "text_light": {
+    "hex": "#ffffff",
+    "role": "Text on dark backgrounds",
+    "source": "discovery: text role count 8 + heading role count 2, confirmed as white text on black sections in screenshots"
+  },
+  "link": {
+    "hex": "#e71818",
+    "role": "Link color",
+    "source": "discovery: link role count 6, confirmed as red link color ('Try This Free') in screenshots"
+  },
+  "background": {
+    "hex": "#ffffff",
+    "role": "Primary background",
+    "source": "discovery: background role count 12"
+  },
+  "background_dark": {
+    "hex": "#000000",
+    "role": "Dark section background",
+    "source": "discovery: background role count 6, confirmed as testimonials section background in screenshots"
+  },
+  "background_accent": {
+    "hex": "#fde8e8",
+    "name": "light-pink",
+    "role": "Hero/accent section background",
+    "source": "screenshot validation: hero section has light pink/salmon tint background, not captured in discovery data"
+  },
+  "variants": {
+    "primary_light": "rgba(231, 24, 24, 0.15)",
+    "primary_dark": "#c41414",
+    "accent_light": "rgba(231, 24, 24, 0.10)",
+    "accent_dark": "#c41414"
+  },
+  "fonts": {
+    "primary": "ui-sans-serif, system-ui, sans-serif",
+    "primary_weight": "700",
+    "secondary": "ui-sans-serif, system-ui, sans-serif",
+    "secondary_weight": "400"
+  }
+}

@@ -1,0 +1,81 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Card from "@wrappers/card/Card.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import Form from "@forms/form/Form.astro";
+import Input from "@forms/input/Input.astro";
+import Submit from "@forms/submit/Submit.astro";
+import Divider from "@core-elements/divider/Divider.astro";
+import ButtonGroup from "@wrappers/button-group/ButtonGroup.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+
+const {
+  heading = "Create Account",
+  form_action = "",
+  submit_text = "Create an Account",
+  buttonSections = [],
+  footer_text = "[Log In](/login/)",
+
+  colorScheme = "inherit",
+  backgroundColor,
+  class: className,
+  useDefaultEditableBinding = false,
+  _component,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<CustomSection
+  class:list={["create-account-form", className]}
+  maxContentWidth="sm"
+  paddingHorizontal="xl"
+  paddingVertical="5xl"
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+  useDefaultEditableBinding={useDefaultEditableBinding}
+  {...htmlAttributes}
+>
+  <Card
+    rounded={true}
+    backgroundColor="base"
+    paddingHorizontal="xl"
+    paddingVertical="xl"
+    border={true}
+    class="create-account-form__card"
+  >
+    <Heading level="h1" size="2xl" alignX="center" text={heading} data-prop="heading" />
+
+    <Form action={form_action} _component="building-blocks/forms/form">
+      <Input label="Full Name" name="name" placeholder="Your Name" />
+      <Input label="Email Address" name="email" type="email" placeholder="Your Email" />
+      <Input label="Password" name="password" type="password" />
+      <Input label="Retype Password" name="password_confirm" type="password" />
+      <Submit text={submit_text} variant="primary" size="lg" data-prop="submit_text" class="create-account-form__submit" />
+    </Form>
+
+    <Divider paddingVertical="md" />
+
+    <ButtonGroup
+      direction="column"
+      alignX="center"
+      buttonSections={buttonSections}
+      data-children-prop="buttonSections"
+    />
+
+    <Divider paddingVertical="md" />
+
+    <SimpleText text={footer_text} alignX="center" data-prop="footer_text" />
+  </Card>
+</CustomSection>
+
+<style is:global>
+  @layer page-sections {
+    .create-account-form__card {
+      margin-top: 0;
+    }
+
+    .create-account-form__submit .button-inner {
+      width: 100%;
+    }
+  }
+</style>
